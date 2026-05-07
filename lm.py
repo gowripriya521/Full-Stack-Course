@@ -408,11 +408,29 @@ car1={
 # print(x)
 # x = pow(4,3)
 # print(x)
-x=min(5,10)
-print("minimum values:",x)
-y=max(5,10)
-print("maximum value:",y)
-z=abs(-7.25)
-print(z)
-i=pow(4,3)
-print(i)
+# x=min(5,10)
+# print("minimum values:",x)
+# y=max(5,10)
+# print("maximum value:",y)
+# z=abs(-7.25)
+# print(z)
+# i=pow(4,3)
+# print(i)
+# try:
+#     print (x)
+# except:
+#     print("an error occurred")
+# finally:
+#     print("Execution complete")
+# try:
+#     print("hello")
+# except:
+#     print("something went wrong")
+# else: 
+#     print("nothing went wrong")
+# x=-1
+# if x<0:
+#     raise Exception("sorry,no numbers below zero")
+# x="hello"
+# if not type(x) is int:
+#     raise TypeError("only integers are allowed")
