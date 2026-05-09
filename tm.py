@@ -1,7 +1,14 @@
-from lm import num_1
-while True:
-    try:
-        user = int(input("enter a number:"))
-        print(num_1(user))
-    except ValueError as e:
-        print("invalid input=",e)
+# x ="hello"
+# i={}
+# for letter in x:
+#     if letter in i:
+#         i[letter]+=1
+#     else:
+#         i[letter]=1
+# print(i)
+import lm
+try:
+    print(lm.add_1("a",5))
+except Exception as e:
+    print("invalid error",e)
+    
