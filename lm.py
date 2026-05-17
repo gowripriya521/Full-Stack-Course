@@ -438,6 +438,17 @@
 # print(list_1)
 # list_1.sort()
 # print(list_1)
+#or
+# list_1=["ramu","anil","rani","priya","anil","priya"]
+# set_1={}
+# for i in list_1:
+#     if i not in set_1:
+#         set_1[i]=0
+# list_1=[]
+# for i in set_1:
+#     list_1.append(i)
+# list_1.sort(reverse=True)
+# print(list_1)
 # 2. Word Frequency Analyzer (Dictionaries)
 # The Problem: Write a program that takes a paragraph of text and counts how many times each unique word appears.
 # Requirements: Store the results in a dictionary where the key is the word and the value is the count.
@@ -565,3 +576,473 @@
 # print("set logics")
 # print(math_club_set & art_club_set)
 # print(math_club_set - art_club_set)
+# 1. Library Book Tracker (Lists & Sets)
+# Problem:A library has duplicate book entries.
+# Requirements:Create a list with duplicate book names.
+# Remove duplicates using a set.
+# Convert back to list and sort the books.
+# Concepts
+# list()
+# set()
+# .sort()
+# list_1=["python","pandas","numpy","python","numpy"]
+# print(list_1)
+# list_1=list(set(list_1))
+# print(list_1)
+# list_1.sort()
+# print(list_1)
+# 1. Sentence Word Counter (Dictionaries)
+# Problem:Count how many times each word appears in a sentence.
+# Requirements:Store words as keys and counts as values in a dictionary.
+# Concepts
+# dict
+# split()
+# loop
+# if key in dict
+# text = "small steps every day lead to big results"
+# word=text.split()
+# count={}
+# for i in word:
+#     if i in count:
+#         count[i]+=1
+#     else:
+#         count[i]=1
+# print(count)
+# 1. Distance Converter Tool (Functions)
+# Problem:Convert kilometers to meters and meters to kilometers.
+# Requirements:Create:
+# to_meters()
+# to_kilometers()
+# Take user input and perform conversion.
+# Concepts
+# functions
+# return
+# arguments
+# input
+# def to_meters(km):
+#     return km*1000
+# def to_kilometers(m):
+#     return m/1000
+# choice=input("enter km for kilometers or m for meters:")
+# if choice=="km":
+#     km=int(input("enter kilometers:"))
+#     print("meters:",to_meters(km))
+# elif choice=="m":
+#     m=int(input("enter meters:"))
+#     print("kilometer:",to_kilometers(m))
+# else:
+#     print("invalid choice")
+# 4. Student Marks Saver (File Handling - Write)
+# Problem:Save student marks into a file.
+# Requirements:Ask user for name and marks.
+# Store them in marks.txt.
+# Concepts
+# open()
+# write()
+# file modes
+# name = input("Enter student name: ")
+# marks = input("Enter marks: ")
+# file = open("marks.txt", "w")
+# file.write(name + " : " + marks)
+# file.close()
+# print("Data Saved")
+# 5. Important Notes Reader (File Handling - Read)
+# Problem:Read a file and print only lines containing "IMPORTANT".
+# Requirements:Open file in read mode and filter lines.
+# Concepts
+# open(..., "r")
+# readlines()
+# loop
+# file = open("notes.txt", "r")
+# lines = file.readlines()
+# for i in lines:
+#     if "IMPORTANT" in i:
+#         print(i)
+# file.close()
+# 6. Random Addition Game (Modules - random)
+# Problem:Generate two random numbers and ask user for addition result.
+# Requirements:Check whether answer is correct.
+# Concepts
+# import random
+# randint()
+# import random
+# num1 = random.randint(1, 10)
+# num2 = random.randint(1, 10)
+# answer = int(input(f"What is {num1} + {num2}: "))
+# if answer == num1 + num2:
+#     print("Correct")
+# else:
+#     print("Wrong")
+# 7. Employee Directory (Nested Dictionaries)
+# Problem
+# Store employee details like salary and department.
+# Requirements
+# Use nested dictionaries and create:
+# find_employee(name)
+# Concepts
+# nested dictionary
+# functions
+# key searching
+# employees = {
+#     "Ravi": {
+#         "salary": 25000,
+#         "department": "IT"
+#     },
+#     "Priya": {
+#         "salary": 30000,
+#         "department": "HR"
+#     }
+# }
+# def find_employee(name):
+#     if name in employees:
+#         print(employees[name])
+#     else:
+#         print("Employee not found")
+# find_employee("Ravi")
+# 8. Safe Password File Checker (os & Exceptions)
+# Problem
+# Check whether a password file exists before opening it.
+# Requirements
+# Use:
+# os.path.exists()
+# Print safe message if file not found.
+# Concepts
+# os module
+# exceptions
+# file handling
+# import os
+# file_name = "password.txt"
+# if os.path.exists(file_name):
+#     file = open(file_name, "r")
+#     print(file.read())
+#     file.close()
+# else:
+#     print("File not found")
+# 9. Sports Club Analyzer (Set Operations)
+# Problem
+# Find students playing both Cricket and Football.
+# Requirements
+# Use set operations to find:
+# common students
+# only cricket students
+# Concepts
+# set logic
+# &
+# cricket = {"Ravi", "Priya", "Anil"}
+# football = {"Priya", "Sita", "Anil"}
+# print(cricket & football)
+# print(cricket - football)
+# 10. Shopping Bill Calculator (Functions & Lists)
+# Problem
+# Store product prices in a list and calculate total bill.
+# Requirements
+# Create a function to calculate total.
+# Concepts
+# list
+# loop
+# function
+# sum logic
+# prices = [100, 200, 300]
+# def total_bill(items):
+#     total = 0
+#     for i in items:
+#         total += i
+#     return total
+# print("Total Bill:", total_bill(prices))
+#=====================class===========================#
+# class MyClass:
+#     x=5
+# p1=MyClass()
+# print(p1.x)
+# class Person:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+#     def greet(self):
+#         print("hello,my name is"+self.name)
+# p1=Person("John",36)
+# p1.greet()
+# import pyjokes
+# joke = pyjokes.get_joke()
+# print(joke)
+# import pyjokes
+# print(pyjokes.get_joke(language='en',category='neutral'))
+# import pywhatkit
+# pywhatkit.playonyt("dheere dheere tu song")
+# 1. Student Details Class
+# The Problem:Create a class to store student information.
+# Requirements: Create a class Student with: name, marks
+# Create a method to display student details:Concepts,class,object,init(),self,methods
+# class Student:
+#     def __init__(self,name,marks):
+#         self.name=name
+#         self.marks=marks
+#     def results(self):
+#         print("my name is:",self.name)
+#         print("my marks is:",self.marks)
+# x=Student("sam",98)
+# x.results()
+# 2. Bank Account System
+# The Problem:Create a simple bank account program.
+# Requirements:Create a class BankAccount with:account holder name,balance
+# Create methods:deposit(),withdraw()
+# Concepts:classes,methods,objects,arithmetic operations
+# class BankAccount:
+#     def __init__(self,account_holder_name,balance):
+#         self.account=account_holder_name
+#         self.balance=balance
+#     def deposit(self,amount):
+#         self.balance+=amount
+#         print("balance after deposit:",self.balance)
+#     def withdraw(self,amount):
+#         self.balance-=amount
+#         print("balance after withdraw:",self.balance)
+# b=BankAccount("priya",10000)
+# b.deposit(2000)
+# b.withdraw(5000)
+# 3. Employee Salary Calculator
+# The Problem:Store employee details and calculate yearly salary.
+# Requirements:Create:employee name,monthly salary
+# Create method:yearly_salary()
+# Concepts:class,methods,calculations
+# class Employee:
+#     def __init__(self,ename,msalary):
+#         self.name=ename
+#         self.salary=msalary
+#     def yearly_salary(self):
+#         self.salary=self.salary*12
+#         print(self.name,"yearly salary:",self.salary)
+# e=Employee("priya",50000)
+# e.yearly_salary()
+# 4. Rectangle Area Finder
+# The Problem:Find area of rectangle using class.
+# Requirements:
+# Create:length,width
+# Create method:area()
+# Concepts,classes,methods,
+# class RectangleArea:
+#     def __init__(self,lenght,width):
+#         self.l=lenght
+#         self.w=width
+#     def area(self):
+#         print(self.l*self.w)
+# r=RectangleArea(30,20)
+# r.area()
+# 5. Car Information System
+# The Problem:Store car details.
+# Requirements:
+# Create class Car with:brand,model,price
+# Create method to display details.
+# Concepts:class,constructor,object creation
+# class Car:
+#     def __init__(self,brand,model,price):
+#         self.b=brand
+#         self.m=model
+#         self.p=price
+#     def display(self):
+#         print(self.b,"is the most popular brand,model-",self.m,"and price is:",self.p)
+# c=Car("Toyota","Fortuner",340000)
+# c.display()
+# 6. Simple Calculator Class
+# The Problem:Create calculator using class.
+# Requirements
+# Create methods:
+# add()
+# subtract()
+# multiply()
+# divide()
+# Concepts:methods,arguments,objects
+# class Calculator:
+#     def __init__(self,a,b):
+#         self.a=a
+#         self.b=b
+#     def add(self):
+#         print(self.a+self.b)
+#     def subtraction(self):
+#         print(self.a-self.b)
+#     def multiply(self):
+#         print(self.a*self.b)
+#     def divide(self):
+#         print(self.a/self.b)
+# c=Calculator(20,10)
+# c.add()
+# c.subtraction()
+# c.multiply()
+# c.divide()
+# 7. Attendance Manager
+# The Problem:Store student attendance.
+# Requirements
+# Create methods:
+# mark_present()
+# show_attendance()
+# Concepts:class,list inside class,methods
+# class AttendanceManager:
+#     def __init__(self):
+#         self.student=[]
+#     def marks_present(self,name):
+#         self.student.append(name)
+#     def show_attendance(self):
+#         print(self.student)
+# a=AttendanceManager()
+# a.marks_present("sam")
+# a.marks_present("ramu")
+# a.show_attendance()
+# 9. Shopping Cart Class
+# The Problem:Create a shopping cart system.
+# Requirements:Store products in list and calculate total price.
+# Concepts:classes,lists,methods,loops
+# class ShoppingCard:
+#     def __init__(self):
+#         self.product=[]
+#     def add_products(self,price):
+#         self.product.append(price)
+#     def total_price(self):
+#         total=0
+#         for i in self.product:
+#             total+=i
+#         print("total bill:",total)
+# c=ShoppingCard()
+# c.add_products(100)
+# c.add_products(200)
+# c.add_products(200)
+# c.total_price()
+# 10. Login Verification Class
+# The Problem:Create a login system using class.
+# Requirements:Store username and password.
+# Create method:login()
+# Check whether login is successful.
+# Concepts:classes,methods,conditions
+# class LoginSystem:
+#     def __init__(self):
+#         self.username="Test"
+#         self.password="1234"
+#     def login(self):
+#         user=input("enter name:")
+#         pw=input("enter password:")
+#         if user==self.username and pw==self.password:
+#             print("Login successful")
+#         else:
+#             print("login failed")
+# l=LoginSystem()
+# l.login()
+# 1. Student Record Creator (Create)
+# Problem:Create a dictionary to store student name and marks.
+# Requirements:Add:name,marks,grade,
+# Concepts:dictionary creation,key-value pairs
+# student={
+#     "name":"priya",
+#     "marks":90,
+#     "grade":"A"
+# }
+# print(student)
+# student={
+#     "Ravi":{
+#         "marks":60,
+#         "grade":"B"
+#     },
+#     "priya":{
+#         "marks":97,
+#         "grade":"A"
+#     },
+#     "sam":{
+#         "marks": 56,
+#         "grade":"c"
+#     },
+# }
+# print(student)
+# 2. Employee Information Reader (Read)
+# Problem:Read employee details from dictionary.
+# Requirements:
+# Print:employee name,salary
+# Concepts:dictionary access,keys
+# employee={
+#     "ename":"priya",
+#     "salary":5000
+# }
+# print("employee name:",employee["ename"])
+# print("salary:",employee["salary"])
+# 3. Product Price Updater (Update)
+# Problem:Update the price of a product in dictionary.
+# Requirements:Change old price to new price.
+# Concepts
+# updating dictionary values
+# product={
+#     "apples":50,
+#     "banana":30,
+#     "mango":70
+# }
+# product.update({"apples":70})
+# print(product)
+# 4. Contact Remover (Delete)
+# Problem:Delete a contact from dictionary.
+# Requirements
+# Remove a person using:
+# del
+# Concepts
+# deleting keys
+# contact={
+#     "n1":"sam",
+#     "n2":"priya",
+#     "n3":"suma",
+#     "n4":"raju"
+# }
+# del contact["n3"]
+# print(contact)
+# 5. Favorite Movies Appender (Append)
+# Problem:Create an empty list and add movie names.
+# Requirements
+# Use:
+# append()
+# Concepts
+# list
+# append
+# mname=[]
+# m1=input("enter a movie name:")
+# mname.append(m1)
+# m2=input("enter a movie name:")
+# mname.append(m2)
+# m3=input("enter a movie name:")
+# mname.append(m3)
+# print(mname)
+# 6. Number Slice Viewer (Slicing)
+# Problem:Create a list of numbers from 1 to 10.
+# Requirements:
+# Print:
+# first 3 numbers
+# middle numbers
+# last 2 numbers
+# Concepts
+# list slicing
+# x=[1,2,3,4,5,6,7,8,9,10]
+# print(x[:3])
+# print(x[1:10])
+# print(x[-2:])
+# 7. Shopping List Manager
+# Problem:
+# Store shopping items in list.
+# Requirements
+# Add new item and remove one item.
+# Concepts
+# append()
+# remove()
+# x=["milk","curd","eggs","soap"]
+# x.append("choclate")
+# print(x)
+# x.remove("eggs")
+# print(x)
+# Tuple Code Challenges
+# 8. Student Data Reader
+# Problem
+# Store student details in tuple.
+# Requirements
+# Print:
+# name
+# age
+# course
+# Concepts
+# tuple
+# indexing
+# student=("ramu",21,"python")
+# print("name:",student[0])
+# print("age:",student[1])
+# print("course:",student[2])

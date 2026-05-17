@@ -1,41 +1,16 @@
-# 14.Number Guessing Game
-# Import random module
-# Generate random number from 1 to 20
-# Use loop to guess number
-# Print:
-# Too high
-# Too low
-# Correct
-# Handle invalid input.
-def guess():
-    x=10
-    while True:        
-        try:
-            user = int(input("enter a number:"))
-            if user>x:
-                print("too high")
-            elif user<x:
-                print("too low")
-            else:
-                print("correct")
-                break
-        except Exception as e:
-            print("invalid",e)
-guess()
-# import random
-# def password():
-#     return random.randint(1000,9999)
-# pass_w=password()
-# print(pass_w)
-# for i in range(3):
-#     try:
-#         user = int(input("enter OTP:")) 
-#         if user==pass_w:
-#             print("correct password")
-#             break
-#         else:
-#             print("wrong password")
-#     except Exception as e:
-#         print("invalid input",e)
-#         break
-# password()
+# 2. Word Frequency Analyzer (Dictionaries)
+# The Problem: Write a program that takes a paragraph of text and counts how many times each unique word appears.
+# Requirements: Store the results in a dictionary where the key is the word and the value is the count.
+# Concepts: dict, loop through string, .split(), if key in dict.
+text='''winter is my favorite season because it brings a sense of calm and beauty to the world.
+The cool breeze, misty mornings, and cozy evenings make it special. 
+I enjoy sipping hot tea while reading a book, wrapped in a warm blanket.
+Winter also brings festivals and celebrations, making it a time of joy and togetherness.'''
+word=text.split()
+count={}
+for i in word:
+    if i in count:
+        count[i]+=1
+    else:
+        count[i]=1
+print("is=",count["is"])
