@@ -1013,7 +1013,7 @@
 # last 2 numbers
 # Concepts
 # list slicing
-# x=[1,2,3,4,5,6,7,8,9,10]
+# 
 # print(x[:3])
 # print(x[1:10])
 # print(x[-2:])
@@ -1046,3 +1046,382 @@
 # print("name:",student[0])
 # print("age:",student[1])
 # print("course:",student[2])
+#=================18-05-2026=====================#
+# x=[1,2,3,4,5,6,7,8,9,10]
+# start=0
+# end=len(x)-1
+# while start<end:
+#     # print(x[start],x[end])
+#     x[start],x[end]=x[end],x[start]
+#     start+=1
+#     end-=1
+# print(x)
+# 1. Reverse a List Without Built-in Functions
+# Given a list of integers, reverse the list manually without using:
+# - reverse()
+# - slicing ([::-1])
+# - any built-in reverse utility
+# You must solve it using loops or two pointers.
+# Example:
+# Input:[1, 2, 3, 4, 5]
+# Output:[5, 4, 3, 2, 1]
+# Constraints:
+# - List length >= 1
+# - Do not create another list if possible
+x=[1,2,3,4,5,6,7,8,9,10]
+# start=0
+# end=len(x)-1
+# while start<end:
+#     x[start],x[end]=x[end],x[start]
+#     start+=1
+#     end-=1
+# print(x)
+#=========or=============#
+# i=len(x)-1
+# while i>=0:
+#     print(x[i])
+#     i-=1
+# 2. Find Duplicate Elements in a List
+# Given a list of integers, print all elements that appear more than once.
+# Each duplicate should appear only once in the output.
+# Example:
+# Input:[1, 2, 3, 2, 4, 1, 5]
+# Output:[1, 2]
+# Constraints:
+# - Input may contain multiple duplicates
+# - Order of output does not matter
+# Expected Concept:
+# - Set
+# - Hashing
+# x=[1,2,3,2,4,1,5]
+# y=[]
+# z=[]
+# for i in x:
+#     if i in y:
+#         if i not in z:
+#             z=z+[i]
+#     else:
+#         y=y+[i]
+# print(z)
+
+# 3. Rotate a List by K Positions
+# Given a list and an integer k, rotate the list to the right by k positions.
+# Example:
+# Input:
+# arr = [1, 2, 3, 4, 5]
+# k = 2
+# Output:
+# [4, 5, 1, 2, 3]
+# Additional Notes:
+# - k may be greater than list length
+# - Try solving in-place if possible
+# Expected Concept:
+# - List manipulation
+# - Modulo operation
+# arr=[1,2,3,4,5]
+# k=2
+# n=len(arr)
+# new=[0]*n
+# i=0
+# while i<n:
+#     new[(i+k)%n]=arr[i]
+#     i+=1
+# print(new)
+# 4. Find Common Elements Between Two Lists
+# Given two lists of integers, return all common elements.
+# Example:
+# Input:
+# a = [1, 2, 3, 4]
+# b = [3, 4, 5, 6]
+# Output:
+# [3, 4]
+# Constraints:
+# - Output should not contain duplicates
+# - Order is not important
+# Expected Concept:
+# - Set intersection
+# a=[1,2,3,4]
+# b=[3,4,5,6]
+# x=set(a)
+# y=set(b)
+# print(list(x&y))
+# 5. Check Whether All Characters Are Unique
+# Given a string, determine whether all characters in the string are unique.
+# Example 1:
+# Input:
+# "python"
+# Output:
+# True
+# Example 2:
+# Input:
+# "apple"
+# Output:
+# False
+# Expected Concept:
+# - Set
+# - Character tracking
+# inp="python"
+# set_1=set()
+# Tracker=True
+# for i in inp:
+#     if i in set_1:
+#         Tracker=False
+#     else:
+#         set_1.add(i)
+# print(Tracker)
+# 6. Remove Duplicates While Maintaining Order
+# Given a list, remove duplicate elements while preserving the original order.
+# Example:
+# Input:
+# [1, 2, 2, 3, 1, 4]
+# Output:
+# [1, 2, 3, 4]
+# Constraints:
+# - Preserve first occurrence
+# - Do not sort the list
+# Expected Concept:
+# - Set + List
+# input=[1,2,2,3,1,4]
+# x=set(input)
+# print(list(x))
+#=========or=============#
+# y=[]
+# for i in input:
+#     if i not in y:
+#         y.append(i)
+# print(y)
+# 7. Count Frequency of Characters in a String
+# Given a string, count how many times each character appears.
+# Example:
+# Input:
+# "banana"
+# Output:
+# {
+#  'b': 1,
+#  'a': 3,
+#  'n': 2
+# }
+# Expected Concept:
+# - Dictionary
+# - Frequency counting
+# input="banana"
+# temp={}
+# for i in input:
+#     if i in temp:
+#         temp[i]+=1
+#     else:
+#         temp[i]=1
+# print(temp)
+# 8. Count Frequency of Words in a Sentence
+# Given a sentence, count occurrence of each word.
+# Example:
+# Input:
+# "hi hello hi python"
+# Output:
+# {
+#  'hi': 2,
+#  'hello': 1,
+#  'python': 1
+# }
+# Constraints:
+# - Words are separated by spaces
+# - Ignore punctuation for now
+# Expected Concept:
+# - Dictionary
+# - String splitting
+# input="hi hello hi python"
+# word=input.split()
+# count={}
+# for i in word:
+#     if i in count:
+#         count[i]+=1
+#     else:
+#         count[i]=1
+# print(count)
+
+# 9. Group Students Based on Marks
+# You are given a list containing student names and marks.
+# Group students having the same marks.
+# Example:
+# Input:
+# [
+#  ("ram", 90),
+#  ("sam", 80),
+#  ("raj", 90)
+# ]
+# Output:
+# {
+#  90: ["ram", "raj"],
+#  80: ["sam"]
+# }
+# Expected Concept:
+# - Dictionary of lists
+# input=[
+#  ("ram", 90),
+#  ("sam", 80),
+#  ("raj", 90)
+# ]
+# x={}
+# for name,marks in input:
+#     if marks in x:
+#         x[marks]=x[marks]+[name]
+#     else:
+#         x[marks]=[name]
+# print(x)
+# 10. Two Sum in Sorted Array
+# Given a sorted array and a target value, find two numbers whose sum equals the target.
+# Example:
+# Input:
+# arr = [1, 2, 3, 4, 6]
+# target = 6
+# Output:
+# (2, 4)
+# Constraints:
+# - Array is already sorted
+# - Use two pointers
+# - Avoid nested loops
+# Expected Concept:
+# - Two pointers
+# arr = [1, 2, 3, 4, 6]
+# target = 6
+# s=0
+# e=len(arr)-1
+# while s<e:
+#     i=arr[s]+arr[e]
+#     if i==target:
+#         print(arr[s],arr[e])
+#         break
+#     s+=1
+#     e-=1
+# 11. Check Palindrome Using Two Pointers
+# Given a string, determine whether it is a palindrome.
+# A palindrome reads the same forward and backward.
+# Example:
+# Input:
+# "madam"
+# Output:
+# True
+# Example:
+# Input:
+# "python"
+# Output:
+# False
+# Expected Concept:
+# - Two pointers
+# input="madam"
+# s=0
+# e=len(input)-1
+# Tracker=True
+# while s<e:
+#     if input[s]!=input[e]:
+#         Tracker=False
+#     s+=1
+#     e-=1
+# print(Tracker)
+# 12. Move All Zeroes to End
+# Given an array, move all zeroes to the end while maintaining the order of non-zero elements.
+# Example:
+# Input:
+# [0, 1, 0, 3, 12]
+# Output:
+# [1, 3, 12, 0, 0]
+# Constraints:
+# - Try solving in-place
+# - Minimize operations
+# Expected Concept:
+# - Two pointers
+# input=[0, 1, 0, 3, 12]
+# i=0
+# j=0
+# while i<len(input):
+#     if input[i]!=0:
+#         input[j],input[i]=input[i],input[j]
+#         j+=1
+#     i+=1
+# print(input)
+# 13. Maximum Sum Subarray of Size K
+# Given an array of integers and a window size k, find the maximum sum of any contiguous subarray of size k.
+# Example:
+# Input:
+# arr = [2, 1, 5, 1, 3, 2]
+# k = 3
+# Output:
+# 9
+# Explanation:
+# Subarray:
+# [5,1,3] = 9
+# Expected Concept:
+# - Sliding window
+# arr = [2, 1, 5, 1, 3, 2]
+# k=3
+# z=9
+# a=0
+# b=k
+# while b<len(arr):
+#     if sum(arr[a:b])==z:
+#         print(arr[a:b],"=",z)
+#         break
+#     a+=1
+#     b+=1
+# 14. Longest Substring Without Repeating Characters
+# Given a string, find the length of the longest substring without repeating characters.
+# Example:
+# Input:
+# "abcabcbb"
+# Output:
+# 3
+# Explanation:
+# Longest substring:
+# "abc"
+# Expected Concept:
+# - Sliding window
+# - Set
+# input="abcabcbb"
+# s=0
+# e=0
+# longest=0
+# while e<len(input):
+#     temp=""
+#     i=s
+#     while i<e:
+#         temp+=input[i]
+#         i+=1
+#     if input[e] in temp:
+#             s+=1
+#     else:
+#         if(e-s+1)>longest:
+#             longest=e-s+1
+#         e+=1
+# print(longest)
+# 15. Maximum Number of Vowels in a Window
+# Given a string and an integer k, find the maximum number of vowels present in any substring of size k.
+# Example:
+# Input:
+# s = "abciiidef"
+# k = 3
+# Output:
+# 3
+# Explanation:
+# Substring:
+# "iii"
+# contains 3 vowels
+# Expected Concept:
+# - Sliding window
+# - Character checking
+# s = "abciiidef"
+# k=3
+# x=0
+# y=0
+# for i in s:
+#     if i in "aeiou":
+#         y+=1
+#         if y>=k:
+#             k=y
+#     else:
+#         y=0
+#         x+=1
+# print(k)
+
+
+
+

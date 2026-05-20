@@ -1,16 +1,35 @@
-# 2. Word Frequency Analyzer (Dictionaries)
-# The Problem: Write a program that takes a paragraph of text and counts how many times each unique word appears.
-# Requirements: Store the results in a dictionary where the key is the word and the value is the count.
-# Concepts: dict, loop through string, .split(), if key in dict.
-text='''winter is my favorite season because it brings a sense of calm and beauty to the world.
-The cool breeze, misty mornings, and cozy evenings make it special. 
-I enjoy sipping hot tea while reading a book, wrapped in a warm blanket.
-Winter also brings festivals and celebrations, making it a time of joy and togetherness.'''
-word=text.split()
-count={}
-for i in word:
-    if i in count:
-        count[i]+=1
-    else:
-        count[i]=1
-print("is=",count["is"])
+x=[1,2,3,8,9,4,5,6,7,10]
+# k=19
+# b=2
+# for i in range(len(x)-b):
+#     total=0
+#     for j in range(b):
+#         total+=x[i+j]
+#     if total==k:
+#         print(x[i],x[i+1])
+#         break
+# Tracker=False
+# for i in x:
+#     if Tracker:
+#         break
+#     for j in x:
+#         if(i+j)==k:
+#             print(i,j)
+#             Tracker=True
+#             break
+# for i in x:
+#     for j in x:
+#         if(i+j)==k:
+#             print(i,j)
+#             break
+# k=3
+# z=18
+# a=0
+# b=k
+# # print(x[a:b])
+# while b<=len(x):
+#     if sum(x[a:b])==z:
+#         print(x[a:b])
+#         break
+#     a+=1
+#     b+=1
