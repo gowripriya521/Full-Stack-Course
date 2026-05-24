@@ -1,4 +1,4 @@
-# ==============08-0-2026==================#
+# ==============08-04-2026==================#
 # 1 : Even or Odd Function
 # Create a function check_number()
 # Ask the user to enter a number
@@ -1012,8 +1012,7 @@
 # middle numbers
 # last 2 numbers
 # Concepts
-# list slicing
-# 
+# list slicing# 
 # print(x[:3])
 # print(x[1:10])
 # print(x[-2:])
@@ -1068,7 +1067,7 @@
 # Constraints:
 # - List length >= 1
 # - Do not create another list if possible
-x=[1,2,3,4,5,6,7,8,9,10]
+#x=[1,2,3,4,5,6,7,8,9,10]
 # start=0
 # end=len(x)-1
 # while start<end:
@@ -1363,6 +1362,17 @@ x=[1,2,3,4,5,6,7,8,9,10]
 #         break
 #     a+=1
 #     b+=1
+# import pyjokes
+# print(pyjokes.get_joke())
+# import pyjokes
+# print(pyjokes.get_joke("eu"))
+# print(pyjokes.get_joke("es", "chuck"))
+# import pyjokes
+# for joke in pyjokes.get_jokes():
+#     print(joke)
+#import pywhatkit
+#pywhatkit.start_server()
+#pywhatkit.sendwhats_image("+916303055390", "Images/Hello.png", "Hello")
 # 14. Longest Substring Without Repeating Characters
 # Given a string, find the length of the longest substring without repeating characters.
 # Example:
@@ -1421,6 +1431,338 @@ x=[1,2,3,4,5,6,7,8,9,10]
 #         y=0
 #         x+=1
 # print(k)
+# import smtplib
+# print("SMTP imported successfully")
+# 11. Find Missing Number in Array
+# Question
+# Given a list containing numbers from 1 to n with one number missing, find the missing number.
+# Example
+# Input
+# [1, 2, 4, 5]
+# Expected Output
+# 3
+# Expected Concepts
+# Sum formula
+# Loop
+# Arithmetic logic
+# input=[1,2,3,5]
+# n=5
+# exp=n*(n+1)//2
+# act=0
+# for i in input:
+#     act+=i
+# missing=exp-act
+# print(missing)
+# 12. Find Second Largest Element
+# Question:Given a list of integers, find the second largest element without sorting.
+# Example
+# Input
+# [10, 20, 4, 45, 99]
+# Expected Output
+# 45
+# Expected Concepts
+# Comparison
+# Loop
+# Maximum tracking
+# input=[10,20,4,45,99]
+# l=0
+# s=0
+# for i in input:
+#     if i>l:
+#         s=l
+#         l=i
+#     elif i>s and i!=l:
+#         s=i
+# print(s)
+# 13. Check Anagram Strings
+# Question:Given two strings, check whether they are anagrams.
+# Two strings are anagrams if they contain the same characters with same frequency.
+# Example
+# Input
+# "listen"
+# "silent"
+# Expected Output
+# True
+# Expected Concepts
+# Dictionary
+# Sorting logic
+# Frequency counting
+# s1 = "listen"
+# s2 = "silent"
+# count1 = {}
+# count2 = {}
+# for i in s1:
+#     if i in count1:
+#         count1[i] += 1
+#     else:
+#         count1[i] = 1
+# for i in s2:
+#     if i in count2:
+#         count2[i] += 1
+#     else:
+#         count2[i] = 1
+# print(count1 == count2)
+# 14. Find All Pairs With Given Sum
+# Question:Given a list and a target value, print all pairs whose sum equals the target.
+# Example
+# Input
+# arr = [1, 2, 3, 4, 5]
+# target = 5
+# Expected Output
+# (1, 4)
+# (2, 3)
+# Expected Concepts
+# Set
+# Pair checking
+# Loop
+# arr=[1,2,3,4,5]
+# target=5
+# s=0
+# e=len(arr)-1
+# while s<e:
+#     i=arr[s]+arr[e]
+#     if i==target:
+#         print(arr[s],arr[e])
+#         s+=1
+#         e-=1
+#     elif i<target:
+#         s+=1
+#     else:
+#         e-=1
+# 15. Count Vowels and Consonants
+# Given a string, count vowels and consonants.
+# Example:
+# Input:
+# Python
+# "python"
+# Output:
+# Python
+# Vowels = 1
+# Consonants = 5
+# Expected Concept:
+# Character checking
+# Loops
+# input="python"
+# c=0
+# temp=0
+# for i in input:
+#     if i in "aeiou":
+#         c+=1
+#     else:
+#         temp+=1
+# print("vowels:",c)
+# print("consonants:",temp)
+#========================22-05-2026===========================#
+# 1.Basic Class & Object Implementation:
+# Problem: Create a Rectangle class with attributes length and width. 
+# Implement methods to calculate the area() and perimeter().
+# Goal: Tests your ability to define a class, 
+# use the _init_ constructor, and understand the self keyword.
+# class Rectangle:
+#     def __init__(self,length,width):
+#         self.l=length
+#         self.w=width
+#     def area(self):
+#         return self.l*self.w
+#     def perimiter(self):
+#         return 2*(self.l+self.w)
+# r=Rectangle(30,20)
+# print(r.area())
+# print(r.perimiter())
+# 2.Inheritance & Method Overriding:
+# Problem: Create a base class Animal with a method speak(). 
+# Create child classes Dog and Cat that override speak() to print "Woof" and "Meow" respectively.
+# Goal: Demonstrates understanding of how child classes inherit and modify parent behavior.
+# class Animal:
+#     def speak(self):
+#        print("Animal sound")
+# class Dog(Animal):
+#     def speak(self):
+#         print("woof")
+# class Cat(Animal):
+#     def speak(self):
+#         print("meow")
+# d1=Dog()
+# c1=Cat()
+# print(d1.speak())
+# print(c1.speak())
+# 3.Encapsulation (Private/Protected Members):
+# Problem: Design a BankAccount class where the balance attribute is private. 
+# Provide methods to deposit(), withdraw(), and a getter to view the current balance.
+# Goal: Checks if you know how to use single underscores () or double underscores (_) to manage data access.
+# class BankAccount:
+#     def __init__(self,balance):
+#         self.__b=balance
+#     def deposit(self,amount):
+#         self.__b+=amount
+#         print("balance after deposit:",amount)
+#     def withdraw(self,amount):
+#         if amount<=self.__b:
+#             self.__b-=amount
+#             print("balance after withdraw:",amount)
+#         else:
+#             print("insufficient balance")
+#     def get_b(self):
+#         return self.__b
+# b=BankAccount(5000)
+# print(b.deposit(2000))
+# print(b.withdraw(2000))
+# print(b.get_b())
+# 4.Constructor Overloading Simulation:
+# Problem: In Python, you cannot have multiple _init_ methods.
+# How would you create an Employee class that can be initialized either with just a name or with both a name and a salary?.
+# Goal: Tests knowledge of default arguments or using args/*kwargs to handle flexible inputs.
+# class Employee:
+#     def __init__(self,name,salary=None):
+#         self.n=name
+#         self.s=salary
+#     def greet(self):
+#         print("name:",self.n)
+#         print("salary:",self.s)
+# e=Employee("priya",50000)
+# e.greet()
+# 5.Polymorphism with Functions:
+# Problem: Write a function that takes a list of different objects 
+# (e.g., Circle, Square) and calls their common draw() method.
+# Goal: Demonstrates "duck typing" and the ability to use a single interface for different data types.
+# Circle Class
+# class Circle:
+#     def draw(self):
+#         print("Drawing Circle")
+# class Square:
+#     def draw(self):
+#         print("Drawing Square")
+# def draw_shapes(shapes):
+#     for shape in shapes:
+#         shape.draw()
+# c1 = Circle()
+# s1 = Square()
+# shape_list = [c1, s1]
+# draw_shapes(shape_list)
+# 6. Student Details Class
+# The Problem:Create a class to store student information.
+# Requirements: Create a class Student with: name, marks
+# Create a method to display student details:Concepts,class,object,init(),self,methods
+# class Student:
+#     def __init__(self,name,marks):
+#         self.name=name
+#         self.marks=marks
+#     def results(self):
+#         print("my name is:",self.name)
+#         print("my marks is:",self.marks)
+# x=Student("sam",98)
+# x.results()
+# 7. Employee Salary Calculator
+# The Problem:Store employee details and calculate yearly salary.
+# Requirements:Create:employee name,monthly salary
+# Create method:yearly_salary()
+# Concepts:class,methods,calculations
+# class Employee:
+#     def __init__(self,ename,msalary):
+#         self.name=ename
+#         self.salary=msalary
+#     def yearly_salary(self):
+#         self.salary=self.salary*12
+#         print(self.name,"yearly salary:",self.salary)
+# e=Employee("priya",50000)
+# e.yearly_salary()
+# 8. Car Information System
+# The Problem:Store car details.
+# Requirements:
+# Create class Car with:brand,model,price
+# Create method to display details.
+# Concepts:class,constructor,object creation
+# class Car:
+#     def __init__(self,brand,model,price):
+#         self.b=brand
+#         self.m=model
+#         self.p=price
+#     def display(self):
+#         print(self.b,"is the most popular brand,model-",self.m,"and price is:",self.p)
+# c=Car("Toyota","Fortuner",340000)
+# c.display()
+# 9. Simple Calculator Class
+# The Problem:Create calculator using class.
+# Requirements
+# Create methods:
+# add()
+# subtract()
+# multiply()
+# divide()
+# Concepts:methods,arguments,objects
+# class Calculator:
+#     def __init__(self,a,b):
+#         self.a=a
+#         self.b=b
+#     def add(self):
+#         print(self.a+self.b)
+#     def subtraction(self):
+#         print(self.a-self.b)
+#     def multiply(self):
+#         print(self.a*self.b)
+#     def divide(self):
+#         print(self.a/self.b)
+# c=Calculator(20,10)
+# c.add()
+# c.subtraction()
+# c.multiply()
+# c.divide()
+# 10. Attendance Manager
+# The Problem:Store student attendance.
+# Requirements
+# Create methods:
+# mark_present()
+# show_attendance()
+# Concepts:class,list inside class,methods
+# class AttendanceManager:
+#     def __init__(self):
+#         self.student=[]
+#     def marks_present(self,name):
+#         self.student.append(name)
+#     def show_attendance(self):
+#         print(self.student)
+# a=AttendanceManager()
+# a.marks_present("sam")
+# a.marks_present("ramu")
+# a.show_attendance()
+# 11. Shopping Cart Class
+# The Problem:Create a shopping cart system.
+# Requirements:Store products in list and calculate total price.
+# Concepts:classes,lists,methods,loops
+# class ShoppingCard:
+#     def __init__(self):
+#         self.product=[]
+#     def add_products(self,price):
+#         self.product.append(price)
+#     def total_price(self):
+#         total=0
+#         for i in self.product:
+#             total+=i
+#         print("total bill:",total)
+# c=ShoppingCard()
+# c.add_products(100)
+# c.add_products(200)
+# c.add_products(200)
+# c.total_price()
+# 12. Login Verification Class
+# The Problem:Create a login system using class.
+# Requirements:Store username and password.
+# Create method:login()
+# Check whether login is successful.
+# Concepts:classes,methods,conditions
+# class LoginSystem:
+#     def __init__(self):
+#         self.username="Test"
+#         self.password="1234"
+#     def login(self):
+#         user=input("enter name:")
+#         pw=input("enter password:")
+#         if user==self.username and pw==self.password:
+#             print("Login successful")
+#         else:
+#             print("login failed")
+# l=LoginSystem()
+# l.login()
 
 
 
