@@ -1763,7 +1763,115 @@
 #             print("login failed")
 # l=LoginSystem()
 # l.login()
-
-
-
-
+# 13. Design a class as described below.
+# class name : MyClass
+# function: function name - display(), parameters - none, return type - void ,
+# access modifier - public, function body - should print "Hello World"
+# Note: The driver's code will call the display function of the MyClass
+# Example:
+# Input: None
+# Output: "Hello World"
+# class MyClass:
+#     def display(self):
+#         print("hello world")        
+# c=MyClass()
+# c.display()
+#14.  Design a class as described below.
+# class: User
+# instance variable: name(String)
+# constructor: parameter: none, task: initialize the instance variable to "Default"
+# Note: The driver's code will print instance variable (name) of your designed class.
+# Example:
+# Input: None
+# Output: Default
+# class User:
+#     def __init__(self):
+#        self.name="Default"       
+# c=User()
+# print(c.name)
+# 15. Your task is to create a Person class in Python that demonstrates encapsulation. 
+# This class should have two "private" attributes:
+# name (String) with a default value of "Geeks".
+# age (int) with a default value of 10.
+# The class should provide public methods to access and modify these private attributes:
+# Getter Methods: get_name() and get_age()
+# Setter Methods: set_name(name) and set_age(age)
+# Example:
+# Input: Funtion calls: [Person(), get_name(), set_name("John"), set_age(21), get_name(), get_age()] 
+# Output: Geeks John 21
+# class Person:
+#     def __init__(self):
+#         self.__name="Geeks"
+#         self.__age=10
+#     def get_name(self):
+#         return self.__name
+#     def get_age(self):
+#         return self.__age
+#     def set_name(self,name):
+#         self.__name=name
+#     def set_age(self,age):
+#        self.__age=age
+# p1=Person()
+# print(p1.get_name())
+# p1.set_name("john")
+# p1.set_age(21)
+# print(p1.get_name())
+# print(p1.get_age())
+# 16. Implement the following classes to understand abstraction in Python :
+# Note: Driver code makes all the function calls and print statements
+# Class Name: Shape (Abstract Class)
+# Attributes: color (String)
+# Constructor: Shape(c) -> assign value of c to color attribute
+# Methods: get_color() -> returns value of color
+#          get_area() -> abstract method with float return type
+# Class Name: Square (extends Shape)
+# Attributes: side (float)
+# Constructor: Square(c, side) -> calls super(c) to initialize the color and assigns the value to side.
+# Methods: get_area() -> returns the area of the square (side * side).
+# Example:
+# Input: color = "red", side = 5.0
+# Output: 
+# red 25.0
+# from abc import ABC, abstractmethod
+# class Shape(ABC):
+#     def __init__(self,c):
+#         self.color=c
+#     def get_c(self):
+#         return self.color
+#     @abstractmethod
+#     def get_area(self):
+#         ...
+# class Square(Shape):
+#     def __init__(self,c,side):
+#         self.color=c
+#         self.s=side
+#     def get_area(self):
+#         return self.s*self.s
+# s=Square("red",5.0)
+# print(s.get_c())
+# print(s.get_area())
+# 17. Design a class as described below:
+# Class Name: Addition
+# Method:
+# Function Name: add
+# Parameters: a (int), b (int)
+# Return Type: int
+# Static: Yes (Use the @staticmethod decorator)
+# Task: Returns the sum of the values given as parameters.
+# Examples
+# Input: a = 3, b = 4
+# Output: 7
+# class Addition:
+#     def __init__(self,a,b):
+#         self.a=a
+#         self.b=b
+#     def add_1(self):
+#         return self.a+self.b
+# a=Addition(3,4)
+# print(a.add_1())
+# ==============or=================
+# class Addition:
+#     @staticmethod
+#     def add(a, b):
+#         return a + b
+# print(Addition.add(3, 4))
