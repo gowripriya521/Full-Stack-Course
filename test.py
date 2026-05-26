@@ -1,29 +1,29 @@
-s = [1,2,3,4,5,6]
-print(s[::-1])
-print(s[2:])
-print(s[:2])
-#===============================
-x = 10
-if x > 5:
-    pass
-else:
-    print("less than 5")
-#======================================
-age = 20
-id1 = True
-if age>=18:
-    if id1:
-        print("you can enter")
-#===============================================
-for i in range(1,6):
-    if i == 3 :
-        continue
-    print(i)
-#================================================
-i = 1
-while i<=5:
-    print(i)
-    i+=1
+# s = [1,2,3,4,5,6]
+# print(s[::-1])
+# print(s[2:])
+# print(s[:2])
+# #===============================
+# x = 10
+# if x > 5:
+#     pass
+# else:
+#     print("less than 5")
+# #======================================
+# age = 20
+# id1 = True
+# if age>=18:
+#     if id1:
+#         print("you can enter")
+# #===============================================
+# for i in range(1,6):
+#     if i == 3 :
+#         continue
+#     print(i)
+# #================================================
+# i = 1
+# while i<=5:
+#     print(i)
+#     i+=1
 #================================================
 # def add_1(a,b,c):
 #     return a+b+c
@@ -104,6 +104,10 @@ while i<=5:
 # print(colors)
 # print(len(colors))
 # #===============================
+# 1. The "Stop" Command
+# The Goal: Keep asking the user to type a word.
+# If the word is "stop" (in any casing, like "STOP" or "stop"), 
+# end the loop. Otherwise, tell them "I will keep going..." and ask again.
 # def user_1():
 #     while True:
 #         word = input("enter a word:")
@@ -113,6 +117,12 @@ while i<=5:
 #         else:
 #             print("i will keep going....")
 # user_1()
+# 2. The Positive Inputter
+# The Goal: Ask the user for a number. 
+# If the number is negative, 
+# print "Error: Negative number" and ask again.
+# If the number is positive, 
+# print "Thank you!" and end the loop.
 # def positive_1():
 #     while True:
 #         num = int(input("enter a number:"))
@@ -122,6 +132,11 @@ while i<=5:
 #             print("Thank you!")
 #             break
 # positive_1()
+# 3. Vowel Hunter
+# The Goal: Ask the user for a single word. 
+# Loop through every letter in that word. 
+# If the letter is a vowel (a, e, i, o, u), print "Found a vowel!". 
+# If not, print the letter itself.
 # def vowel_1(word):
 #     for i in word:
 #         if i.lower() in "aeiou":
@@ -129,15 +144,24 @@ while i<=5:
 #         else:
 #             print(i)
 # vowel_1("CAT")
+# 4. The Even Sum
+# The Goal: Use a loop to check every number from 1 to 50. 
+# If the number is even, add it to a "total" variable. 
+# After the loop finished, print the final sum.
 # def even_1():
 #     total=0
 #     num=1
 #     while (num<=50):
 #         if num%2==0:
 #             total+=num
-#         i+=1
+#         num+=1
 #     print("sum of even numbers:",total)
 # even_1()
+# 5. Lucky 7s
+# The Goal: Print numbers from 1 to 30. 
+# If a number is divisible by 7, 
+# print "Lucky!" instead of the number. 
+# If it is not divisible by 7, just print the number.
 # def lucky_1(num):
 #     i=0
 #     #while i<=30:
@@ -147,6 +171,11 @@ while i<=5:
 #         else:
 #             print("number:",i)
 # lucky_1(7)
+# 6. The Budget Tracker
+# The Goal: Start with a variable balance = 100. 
+# Ask the user for the price of an item. 
+# If they have enough money, subtract the price from the balance. 
+# If they don't, print "Insufficient funds!" and end the loop.
 # def budget_1():
 #     bala=100
 #     while True:
@@ -158,6 +187,11 @@ while i<=5:
 #                 print("insufficient fund!") 
 #                 break
 # budget_1()
+# 7. The Password Lockout
+# The Goal: Set a secret password. 
+# Allow the user to try and guess it. 
+# If they get it wrong, tell them "Try again." 
+# If they fail 3 times in a row, print "Account Locked" and stop the loop.
 # def password_1():
 #     p = "Test123"
 #     count = 3
@@ -165,6 +199,7 @@ while i<=5:
 #         users = input("enter password:")
 #         if users == p:
 #             print("correct")
+#             break
 #         elif count == 0:
 #             print("Accountlocked")
 #         else:
@@ -312,12 +347,12 @@ while i<=5:
 # valid_1()
 # def exa_1(name):
 #     print("Hello", name)
-car1={
-    "model":2001,
-    "company":"audi",
-    "price" : 10.20,
-    "color":"Blue"
-}
+# car1={
+#     "model":2001,
+#     "company":"audi",
+#     "price" : 10.20,
+#     "color":"Blue"
+# }
 # x = [1,2,3,5,6,7,2,3]
 # small=x[0]
 # for i in x:
@@ -574,3 +609,11 @@ car1={
 
 # def add_1(a,b):
 #     return a+b
+# num=[1,2,4,4,5,6,7,4,5,0,0]
+# temp={}
+# for i in num:
+#     if i not in temp:
+#         temp[i]=1
+#     else:
+#         temp[i]+=1
+# print(temp)

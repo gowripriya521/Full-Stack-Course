@@ -1875,3 +1875,140 @@
 #     def add(a, b):
 #         return a + b
 # print(Addition.add(3, 4))
+# 18.Vehicle Management System
+# Create:
+# Parent class → Vehicle
+# Child classes → Car and Bike
+# Requirements:
+# Vehicle should contain common methods
+# Car and Bike should inherit Vehicle features
+# Add separate methods for child classes
+# Concepts Tested:
+# Inheritance
+# Parent-child relationship
+# class Vehicle:
+#     def start(self):
+#         print("Vehicle Started")
+# class Car(Vehicle):
+#     def drive(self):
+#         print("Car Driving")
+# class Bike(Vehicle):
+#     def ride(self):
+#         print("Bike Riding")
+# c1 = Car()
+# b1 = Bike()
+# c1.start()
+# c1.drive()
+# b1.start()
+# b1.ride()
+# 19.Shape Area Calculator
+# Create abstract class Shape.
+# Requirements:
+# Create abstract method:
+# area()
+# Create child classes:
+# Circle
+# Rectangle
+# Triangle
+# Calculate area differently for each shape
+# Concepts Tested:
+# Abstraction
+# Polymorphism
+# from abc import ABC, abstractmethod
+# class Shape(ABC):
+#     @abstractmethod
+#     def area(self):
+#         pass
+# class Circle(Shape):
+#     def __init__(self, r):
+#         self.r = r
+#     def area(self):
+#         print(3.14 * self.r * self.r)
+# class Rectangle(Shape):
+#     def __init__(self, l, b):
+#         self.l = l
+#         self.b = b
+#     def area(self):
+#         print(self.l * self.b)
+# c1 = Circle(5)
+# r1 = Rectangle(10, 5)
+# c1.area()
+# r1.area()
+# 20.Library Management System
+# Requirements:
+# Add books
+# Issue books
+# Return books
+# Display available books
+# Need Classes:
+# Book
+# Library
+# Student
+# Concepts Tested:
+# Object interaction
+# Encapsulation
+# class Library:
+#     def __init__(self):
+#         self.books = []
+#     def add_book(self, book):
+#         self.books.append(book)
+#     def show_books(self):
+#         print(self.books)
+# l1 = Library()
+# l1.add_book("Python")
+# l1.add_book("Java")
+# l1.show_books()
+# 21.Payment Gateway System
+# Requirements:
+# Create payment methods:
+# UPI
+# Credit Card
+# Net Banking
+# Use same method:
+# pay()
+# Different implementation for each payment type
+# Concepts Tested:
+# Polymorphism
+# Method overriding
+# class Payment:
+#     def pay(self):
+#         print("Payment Done")
+# class UPI(Payment):
+#     def pay(self):
+#         print("UPI Payment")
+# class Card(Payment):
+#     def pay(self):
+#         print("Card Payment")
+# u1 = UPI()
+# c1 = Card()
+# u1.pay()
+# c1.pay()
+# 22.Mobile Phone System
+# Requirements:
+# Call
+# Message
+# Camera
+# Internet
+# Need:
+# Parent class → Mobile
+# Child class → SmartPhone
+# Concepts Tested:
+# Inheritance
+# Method overriding
+# class Mobile:
+#     def call(self):
+#         print("Calling...")
+#     def message(self):
+#         print("Sending Message...")
+# class SmartPhone(Mobile):
+#     def camera(self):
+#         print("Opening Camera...")
+#     def internet(self):
+#         print("Connecting Internet...")
+#     def call(self):
+#         print("Video Calling...")
+# s1 = SmartPhone()
+# s1.call()
+# s1.message()
+# s1.camera()
+# s1.internet()
