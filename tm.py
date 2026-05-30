@@ -1,30 +1,44 @@
-# 15. Maximum Number of Vowels in a Window
-# Given a string and an integer k, find the maximum number of vowels present in any substring of size k.
-# Example:
-# Input:
-# s = "abciiidef"
-# k = 3
-# Output:
-# 3
-# Explanation:
-# Substring:
-# "iii"
-# contains 3 vowels
-# Expected Concept:
-# - Sliding window
-# - Character checking
-# s="abciiidef"
-# k=3
-# x=0
-# c=0
-# for i in s:
-#     if i in "aeiou":
-#         c+=1
-#         if c>=k:
-#             k=c
-#     else:
-#         c=0
-#         x+=1
-# print(k)
+# class Sub:
+#     def __init__(self,a,b):
+#         self.a=a
+#         self.b=b
+#     def add_1(self):
+#         return self.a+self.b
+#     def mul(self):
+#         return self.a*self.b
+#     def __isvalid(self):
+#         if (self.a+self.b)>10:
+#             return True
+#         return False
+#     def greet_a(self):
+#         if self.__isvalid():
+#             print("its valid")
+#         else:
+#             print("invalid")
+# s=Sub(8,3)
+# print(s.add_1())
+# print(s.mul())
+# #print(s.__isvalid())
+# print(s.greet_a())
 
+# print(dir(int))
+# class Demo:
+#     def __new__(cls):
+#         print("Creating object")
+#         return super().__new__(cls)
 
+#     def __init__(self):
+#         print("Initializing object")
+
+# d = Demo()
+# class Number:
+#     def __init__(self, value):
+#         self.v = value
+
+#     def __mod__(self, other):
+#         return self.v % other.v
+
+# n1 = Number(10)
+# n2 = Number(3)
+
+# print(n1 % n2)
