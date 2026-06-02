@@ -129,7 +129,7 @@
 # import mymodule
 # marks = []
 # try:
-#     for i in range(3):
+#     for i in range(3):                             
 #         user= int(input("enter a marks:"))
 #         marks.append(user)
 #     total = mymodule.student_1(marks)
