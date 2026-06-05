@@ -617,3 +617,9 @@
 #     else:
 #         temp[i]+=1
 # print(temp)
+def test_gen():
+    for i in range(11):
+        yield i
+x=test_gen()
+for i in x:
+    print(x)
