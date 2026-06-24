@@ -2012,3 +2012,24 @@
 # s1.message()
 # s1.camera()
 # s1.internet()
+#===========practices Questions============================#
+# 1.How do you write a program to check whether a character is a vowel or consonant?
+# input="a"
+# vowels="aeiou"
+# for i in input:
+#     if i.lower() in vowels:
+#         print("its vowel")
+#     else:
+#         print("its consonant")
+# 2.How do you check whether a character is an alphabet or not?
+# x="-"
+# y="alphabet"
+# for i in x:
+#     if i in y:
+#         print("its a character")
+#         break
+#     else:
+#         print("its not a character")
+#3.How do you find the ASCII value of a character?
+# x="A"
+# print("the ascii value of '"+ x +"' is",ord(x))
