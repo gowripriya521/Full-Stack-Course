@@ -1,44 +1,33 @@
-# class Sub:
-#     def __init__(self,a,b):
-#         self.a=a
-#         self.b=b
-#     def add_1(self):
-#         return self.a+self.b
-#     def mul(self):
-#         return self.a*self.b
-#     def __isvalid(self):
-#         if (self.a+self.b)>10:
-#             return True
-#         return False
-#     def greet_a(self):
-#         if self.__isvalid():
-#             print("its valid")
-#         else:
-#             print("invalid")
-# s=Sub(8,3)
-# print(s.add_1())
-# print(s.mul())
-# #print(s.__isvalid())
-# print(s.greet_a())
+# from datetime import datetime 
+# from time import sleep
+# print(datetime.now().time())
+# sleep(5)
+# print(datetime.now().time())
 
-# print(dir(int))
-# class Demo:
-#     def __new__(cls):
-#         print("Creating object")
-#         return super().__new__(cls)
+# def test_dec(func):
+#     def wrapper(*args,**kwargs):
+#         print("function started")
+#         result = func(*args,**kwargs)
 
-#     def __init__(self):
-#         print("Initializing object")
+#         print("function ended")
+#         return result
+#     return wrapper
 
-# d = Demo()
-# class Number:
-#     def __init__(self, value):
-#         self.v = value
 
-#     def __mod__(self, other):
-#         return self.v % other.v
 
-# n1 = Number(10)
-# n2 = Number(3)
 
-# print(n1 % n2)
+
+# @test_dec
+# def greet():
+#     print("hello")
+# greet()
+x="Gaddam gowri priya"
+temp={}
+for i in x:
+    if i in temp:
+        temp[i]+=1
+    else:
+        temp[i]=1
+print(temp["i"])
+
+# C:\Users\kr418\AppData\Local\Python\pythoncore-3.14-64
