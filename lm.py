@@ -1372,7 +1372,7 @@
 #     print(joke)
 #import pywhatkit
 #pywhatkit.start_server()
-#pywhatkit.sendwhats_image("+916303055390", "Images/Hello.png", "Hello")
+#pywhatkit.sendwhats_image("+916254365990", "Images/Hello.png", "Hello")
 # 14. Longest Substring Without Repeating Characters
 # Given a string, find the length of the longest substring without repeating characters.
 # Example:
