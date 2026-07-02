@@ -1,2 +1,2 @@
-s_1 = {1,2,3}
-print(type(s_1))
+# s_1 = {1,2,3}
+# print(type(s_1))
