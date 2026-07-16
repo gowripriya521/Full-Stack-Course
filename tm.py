@@ -1,206 +1,96 @@
-# from datetime import datetime 
-# from time import sleep
-# print(datetime.now().time())
-# sleep(5)
-# print(datetime.now().time())
-
-# def test_dec(func):
-#     def wrapper(*args,**kwargs):
-#         print("function started")
-#         result = func(*args,**kwargs)
-
-#         print("function ended")
-#         return result
-#     return wrapper
-
-# @test_dec
-# def greet():
-#     print("hello")
-# greet()
-# x="Gaddam gowri priya"
-# temp={}
-# for i in x:
-#     if i in temp:
-#         temp[i]+=1
-#     else:
-#         temp[i]=1
-# print(temp["i"])
-# 1. The "Stop" Command
-# The Goal: Keep asking the user to type a word.
-# If the word is "stop" (in any casing, like "STOP" or "stop"), 
-# end the loop. Otherwise, tell them "I will keep going..." and ask again.
-# def word_1():
-#     while True:
-#         user = input("enter a word:")
-#         if user.lower() =="stop":
-#             print("done")
-#             break
+#1.Concepts: Attributes, methods, updating state.
+# Create a class named ⁠BankAccount⁠ that simulates basic banking operations.
+#  Attributes: ⁠account_holder⁠ (string) and ⁠balance⁠ (float, defaults to ⁠0.0⁠).
+#  Methods:
+#  ⁠deposit(amount)⁠: Adds the amount to the balance.
+#  ⁠withdraw(amount)⁠: Deducts the amount from the balance if there are sufficient funds. If not, print ⁠"Insufficient funds!"⁠.
+#  ⁠display_balance()⁠: Prints a message showing the current balance.
+# class BankAccount:
+#     def __init__(self,account_holder,balance=0.0):
+#         self.a=account_holder
+#         self.b=balance
+#     def deposit(self,amount):
+#         self.b+=amount
+#         print("deposit amount",amount)
+#     def withdraw(self,amount):
+#         if amount<self.b:
+#             self.b-=amount
+#             print("withdraw amount",amount)
 #         else:
-#             print("i will keep going...")
-# word_1()   
-# 2. The Positive Inputter
-# The Goal: Ask the user for a number.
-#  If the number is negative, print "Error: Negative number" and ask again. 
-# If the number is positive, print "Thank you!" and end the loop.
-# def positivenum(func):
-#     def wrapper(*args,**kwargs):
-#         while True:
-#             user = int(input("enter a number:"))
-#             if user<0:
-#                 print("error:Negative number")
-#             else:
-#                 print("Thank you!")
-#                 break
-#     return wrapper
-# @positivenum
-# def greet():
-#     ...
-# greet()
-# 3. Vowel Hunter
-# The Goal: Ask the user for a single word. 
-# Loop through every letter in that word. 
-# If the letter is a vowel (a, e, i, o, u), print "Found a vowel!".
-# If not, print the letter itself.
-# def hunt(func):
-#     def wrapper(*args,**kwargs):
-#         word=args[0]
-#         for i in word:
-#             if i.lower() in "aeiou":
-#                 print("found")
-#             else:
-#                 print(i)
-#         func(*args,**kwargs)
-#     return wrapper
-# @hunt
-# def greet(word):
-#     ... 
-# greet("cat")  
-# 1. Create a decorator that prints "Function Started" before executing the function and "Function Ended" after execution.
-# Concepts Tested:
-# Basic decorator
-# Wrapper function
-# def test_dec(func):
-#     def wrapper(*args,**kwargs):
-#         print("function started")
-#         result = func(*args,**kwargs)
+#             print("insufficient funds!")
+#     def display_balance(self):
+#         print("current balance",self.b)
+# a=BankAccount("sam")
+# a.deposit(50000)
+# a.withdraw(40000)
+# a.display_balance()
 
-#         print("function ended")
-#         return result
-#     return wrapper
 
-# @test_dec
-# def greet():
-#     print("hello")
-# greet()
-# 2. Create a decorator that counts how many times a function has been called.
-# Concepts Tested:
-# Variables
-# Closures
-# Decorators
-# def dectimes(func):
-#     func.count=0
-#     def wrapper(*args,**kwargs):
-#         func.count+=1
-#         print("function called:",func.count," time(s)")
-#         func()
-#     return wrapper
-# @dectimes
-# def greet():
-#     print("hello")
-# greet()
-# greet()
-# 3. Create a decorator that measures the execution time of a function.
-# import time
-# def timer(func):
-#     def wrapper():
-#         start = time.time()
-#         func()
-#         end = time.time()
-#         print("Execution Time:", end - start)
-#     return wrapper
-# @timer
-# def display():
-#     print("Learning Python Decorators")
-# display()
-# 4. Create a decorator that logs the function name whenever it is executed.
-# def logger(func):
-#     def wrapper():
-#         print("Calling function:", func.__name__)
-#         func()
-#     return wrapper
-# @logger
-# def add():
-#     print(10 + 20)
-# add()
-# 5. Create a decorator that repeats a function 5 times.
-# def repeat(func):
-#     def wrapper():
-#         for i in range(5):
-#             func()
-#     return wrapper
-# @repeat
-# def hello():
-#     print("Hello")
-# hello()
-# 6. Create a decorator that accepts any number of positional arguments (*args).
-# def display_args(func):
-#     def wrapper(*args):
-#         print("Arguments:", args)
-#         func(*args)
-#     return wrapper
-# @display_args
-# def add(a, b):
-#     print("Sum =", a + b)
-# @display_args
-# def multiply(a, b):
-#     print("Product =", a * b)
-# add(10, 20)
-# multiply(5, 4)
-# 7. Create a decorator that accepts keyword arguments (**kwargs).
-# def display_kwargs(func):
-#     def wrapper(**kwargs):
-#         print(kwargs)
-#         func(**kwargs)
-#     return wrapper
-# @display_kwargs
-# def student(name, age):
-#     print("Name:", name)
-#     print("Age:", age)
-# student(name="Priya", age=22)
-# 8. Create a decorator that prints all arguments passed to a function before execution.
-# def show_arguments(func):
-#     def wrapper(*args):
-#         print("Arguments:")
-#         for i in args:
-#             print(i)
-#         func(*args)
-#     return wrapper
-# @show_arguments
-# def numbers(a, b, c):
-#     print("Function Executed")
-# numbers(10, 20, 30)
-# 9. Create a decorator that validates whether all arguments are integers.
-# def validate(func):
-#     def wrapper(*args):
-#         for i in args:
-#             if type(i) != int:
-#                 print("Invalid Input")
-#                 return
-#         func(*args)
-#     return wrapper
-# @validate
-# def add(a, b):
-#     print("Sum =", a + b)
-# add(10, 20)
-# add(10, "20")
-# 10. Create a decorator that doubles the returned value.
-# def double_result(func):
-#     def wrapper():
-#         result = func()
-#         print("Return Value:", result)
-#         print("Decorator Output:", result * 2)
-#     return wrapper
-# @double_result
-# def number():
-#     return 20
-# number()
+
+# 2. Real-World Modeling: The ⁠Library⁠ and ⁠Book⁠ Classes
+# Concepts: Object interaction (objects holding other objects).
+# Create two classes: ⁠Book⁠ and ⁠Library⁠.
+#  ⁠Book⁠ Class:
+#  Attributes: ⁠title⁠, ⁠author⁠, and ⁠is_loaned⁠ (boolean, defaults to ⁠False⁠).
+#  ⁠Library⁠ Class:
+#  Attributes: ⁠name⁠ and ⁠books⁠ (a list that starts empty).
+#  Methods:
+#  ⁠add_book(book)⁠: Takes a ⁠Book⁠ object and adds it to the library's collection.
+#  ⁠borrow_book(title)⁠: Looks for a book by its title. If found and not loaned out, change ⁠is_loaned⁠ to ⁠True⁠. If already borrowed or not found, print an appropriate message.
+#  ⁠return_book(title)⁠: Looks for a book by title and marks ⁠is_loaned⁠ as ⁠False⁠.
+# class Book:
+#     def __init__(self,title,author,is_loaned=False):
+#         self.title=title
+#         self.author=author
+#         self.is_loaned=is_loaned
+# class Library:
+#     def __init__(self):
+#         self.name=None
+#         self.books=[]
+#     def add_book(self,book):
+#         self.books.append(book)
+#     def borrow_book(self,title):
+#         for book in self.books:
+#             if book.title == title:
+#                 if not book.is_loaned:
+#                     print("thank you for visiting")
+#                     book.is_loaned=True
+#                     return True
+#                 if book.is_loaned:
+#                     print("some one take the book")
+#                     return False
+#         print("title not found")
+#     def return_book(self,title):
+#         for book in self.books:
+#             if book.title == title:
+#                 book.is_loaned=False
+#                 print("book return")
+#                 return True
+#         print("the title not found")
+# l=Library()
+# l.add_book(Book("class","sam"))
+# l.add_book(Book("python","ram"))
+# l.add_book(Book("API","raju"))
+# l.borrow_book("python")
+# l.borrow_book("python")
+# l.return_book("python")
+# l.return_book("python")
+
+
+# 3.The Upgrade: The ⁠ElectricVehicle⁠ Class
+# Concepts: Inheritance and overriding methods.
+# Start with a base ⁠Vehicle⁠ class and build a specific child class.
+#  Base Class ⁠Vehicle⁠:
+#  Attributes: ⁠make⁠, ⁠model⁠, and ⁠fuel_level⁠ (percentage, e.g., ⁠100⁠).
+#  Method: ⁠drive()⁠: Prints ⁠"Driving the [make] [model]!"⁠ and reduces ⁠fuel_level⁠ by ⁠10⁠.
+#  Child Class ⁠ElectricVehicle⁠:
+#  Inherits from ⁠Vehicle⁠.
+#  Override ⁠fuel_level⁠ to be named ⁠battery_level⁠ (or just treat ⁠fuel_level⁠ as the battery capacity).
+#  Override the ⁠drive()⁠ method: Print ⁠"Quietly cruising in the electric [make] [model]!"⁠ and reduce the battery by ⁠5⁠.
+#  Add a new method ⁠charge()⁠: Restores the battery to ⁠100⁠.
+class Vechicle:
+    def __init__(self,make,model,fuel_level):
+        self.make=make
+        self.model=model
+        self.fuel_level="%"
+    def drive(self):

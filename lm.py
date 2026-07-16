@@ -2239,3 +2239,207 @@
 # def number():
 #     return 20
 # number()
+# Write a Python function that accepts two integer numbers. If the product of the two numbers is less than or equal to 1000, return their product; otherwise, return their sum.
+# def fun(a,b):
+#     p=a*b
+#     if p<=1000:
+#         print(p)
+#     else:
+#         print(a+b)
+# fun(40,30)
+#Iterate through the first 10 numbers (0–9). In each iteration, print the current number, the previous number, and their sum.
+# p=0
+# for i in range(0,11):
+#     x=p+i
+#     print(f"current number {i} previous {p} sum:{x}")
+# print(x)
+#Write a script that takes a list containing duplicate items and returns a new list with only unique elements.
+# data = [1, 2, 2, 3, 4, 4, 4, 5]
+# unique_data = list(set(data))
+# print(f"Unique List: {unique_data}")
+#3. Find Missing Number in Sequence
+#Question:
+# Given a list of n-1 integers in the range 1..n, find the missing number.
+# Example: [1, 2, 4, 5] → 3
+# numbers = [1, 2, 4, 5]
+# n = len(numbers) + 1
+# number_set = set(numbers)
+# for i in range(1, n + 1):
+#     if i not in number_set:
+#         print("Missing Number:", i)
+
+#Print Square Of Any Given Number Program
+# 1. Find the First Duplicate
+# Question :arr = [4, 2, 7, 2, 5, 4],Expected Output :First duplicate = 2
+# arr = [4, 2, 7, 2, 5, 4]
+# s=[]
+# du=[]
+# for i in arr:
+#     if i in s:
+#         if i not in du:
+#             du.append(i)
+#     else:
+#         s.append(i)
+# print("the first duplicate=",du[1])
+# arr = [4, 2, 7, 2, 5, 4]
+# seen = set()
+# for num in arr:
+#     if num in seen:
+#         print("First duplicate =", num)
+#         break
+#     seen.add(num)
+#2. Find the First Non-Repeated Character
+# word = "aabbcdeff"
+# count = {}
+# # Count frequency
+# for ch in word:
+#     count[ch] = count.get(ch, 0) + 1
+# # Find first non-repeated character
+# for ch in word:
+#     if count[ch] == 1:
+#         print("First non-repeated character =", ch)
+#         break
+#3. Find the Second Smallest Number
+# arr = [10, 2, 8, 5, 2]
+# unique = list(set(arr))
+# unique.sort()
+# print("Second smallest =", unique[1])
+#4. Separate Even and Odd Numbers
+# arr = [1,2,3,4,5,6]
+# even = []
+# odd = []
+# for num in arr:
+#     if num % 2 == 0:
+#         even.append(num)
+#     else:
+#         odd.append(num)
+# print("Even:", even)
+# print("Odd:", odd)
+# 5. Move All Zeros to the End
+# arr = [2,0,4,0,5,1]
+# result = []
+# for num in arr:
+#     if num != 0:
+#         result.append(num)
+# while len(result) < len(arr):
+#     result.append(0)
+# print(result)
+#Count Consecutive Characters
+# word = "aaabbccccdd"
+# count = 1
+# for i in range(len(word)-1):
+#     if word[i] == word[i+1]:
+#         count += 1
+#     else:
+#         print(word[i], "=", count)
+#         count = 1
+# print(word[-1], "=", count)
+#Find the Missing Alphabet
+ #import string
+# word = "abcdfgh"
+# for ch in string.ascii_lowercase:
+#     if ch not in word:
+#         print("Missing letter =", ch)
+#         break
+#Print Only Unique Elements
+# arr = [1,2,2,3,4,4,5]
+# count = {}
+# for num in arr:
+#     count[num] = count.get(num,0)+1
+# for num in arr:
+#     if count[num] == 1:
+#         print(num)
+#Find the Longest Word
+# sentence = "Python is a powerful programming language"
+# words = sentence.split()
+# longest = words[0]
+# for word in words:
+#     if len(word) > len(longest):
+#         longest = word
+# print("Longest word =", longest)
+# class Employee:
+#     def calculate_salary(self):
+#         print("Calculating salary")
+# class EmployeeDatabase:
+#     def save_employee(self):
+#         print("Saving Employee")
+# class EmailService:
+#     def send_email(self):
+#         print("Sending Email")
+# class Payment:
+#     def pay(self):
+#         pass
+# class CreditCard(Payment):
+#     def pay(self):
+#         print("Credit Card")
+# class UPI(Payment):
+#     def pay(self):
+#         print("UPI")
+# class PayPal(Payment):
+#     def pay(self):
+#         print("PayPal")
+# class Bird:
+#     pass
+# class FlyingBird(Bird):
+#     def fly(self):
+#         print("Flying")
+# class Sparrow(FlyingBird):
+#     pass
+# class Penguin(Bird):
+#     def swim(self):
+#         print("Swimming")
+# class Workable:
+#     def work(self):
+#         pass
+# class Eatable:
+#     def eat(self):
+#         pass
+# class Human(Workable,Eatable):
+#     def work(self):
+#         print("Working")
+#     def eat(self):
+#         print("Eating")
+# class Robot(Workable):
+#     def work(self):
+#         print("Robot Working")
+# class InputDevice:
+#     def input(self):
+#         pass
+# class Keyboard(InputDevice):
+#     def input(self):
+#         print("Keyboard Input")
+# class Mouse(InputDevice):
+#     def input(self):
+#         print("Mouse Input")
+# class Computer:
+#     def __init__(self,device):
+#         self.device=device
+#     def use(self):
+#         self.device.input()
+# computer=Computer(Keyboard())
+# computer.use()
+# class Animal:
+#     def __init__(self,animal_name):
+#         self.a=animal_name
+#     def sound(self):
+#         if self.a=="Dog":
+#             print("bow bow")
+#         elif self.a=="Cat":
+#             print("mewo mewo")
+#         elif self.a=="Penguin":
+#             print("chu chu")
+#         else:
+#             print("unkown animal")
+#     def food(self):
+#         food=["meat","milk","ice"]
+#         if self.a=="Dog":
+#             print(food[0])
+#         elif self.a=="Cat":
+#             print(food[1])
+#         elif self.a=="Penguin":
+#             print(food[2])
+#         else:
+#             print("error")
+# a=Animal("lion")
+# a.sound()
+# a.food()
