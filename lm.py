@@ -2443,3 +2443,308 @@
 # a=Animal("lion")
 # a.sound()
 # a.food()
+#1.Concepts: Attributes, methods, updating state.
+# Create a class named ⁠BankAccount⁠ that simulates basic banking operations.
+#  Attributes: ⁠account_holder⁠ (string) and ⁠balance⁠ (float, defaults to ⁠0.0⁠).
+#  Methods:
+#  ⁠deposit(amount)⁠: Adds the amount to the balance.
+#  ⁠withdraw(amount)⁠: Deducts the amount from the balance if there are sufficient funds. If not, print ⁠"Insufficient funds!"⁠.
+#  ⁠display_balance()⁠: Prints a message showing the current balance.
+# class BankAccount:
+#     def __init__(self,account_holder,balance=0.0):
+#         self.a=account_holder
+#         self.b=balance
+#     def deposit(self,amount):
+#         self.b+=amount
+#         print("deposit amount",amount)
+#     def withdraw(self,amount):
+#         if amount<self.b:
+#             self.b-=amount
+#             print("withdraw amount",amount)
+#         else:
+#             print("insufficient funds!")
+#     def display_balance(self):
+#         print("current balance",self.b)
+# a=BankAccount("sam")
+# a.deposit(50000)
+# a.withdraw(40000)
+# a.display_balance()
+
+
+
+# 2. Real-World Modeling: The ⁠Library⁠ and ⁠Book⁠ Classes
+# Concepts: Object interaction (objects holding other objects).
+# Create two classes: ⁠Book⁠ and ⁠Library⁠.
+#  ⁠Book⁠ Class:
+#  Attributes: ⁠title⁠, ⁠author⁠, and ⁠is_loaned⁠ (boolean, defaults to ⁠False⁠).
+#  ⁠Library⁠ Class:
+#  Attributes: ⁠name⁠ and ⁠books⁠ (a list that starts empty).
+#  Methods:
+#  ⁠add_book(book)⁠: Takes a ⁠Book⁠ object and adds it to the library's collection.
+#  ⁠borrow_book(title)⁠: Looks for a book by its title. If found and not loaned out, change ⁠is_loaned⁠ to ⁠True⁠. If already borrowed or not found, print an appropriate message.
+#  ⁠return_book(title)⁠: Looks for a book by title and marks ⁠is_loaned⁠ as ⁠False⁠.
+# class Book:
+#     def __init__(self,title,author,is_loaned=False):
+#         self.title=title
+#         self.author=author
+#         self.is_loaned=is_loaned
+# class Library:
+#     def __init__(self):
+#         self.name=None
+#         self.books=[]
+#     def add_book(self,book):
+#         self.books.append(book)
+#     def borrow_book(self,title):
+#         for book in self.books:
+#             if book.title == title:
+#                 if not book.is_loaned:
+#                     print("thank you for visiting")
+#                     book.is_loaned=True
+#                     return True
+#                 if book.is_loaned:
+#                     print("some one take the book")
+#                     return False
+#         print("title not found")
+#     def return_book(self,title):
+#         for book in self.books:
+#             if book.title == title:
+#                 book.is_loaned=False
+#                 print("book return")
+#                 return True
+#         print("the title not found")
+# l=Library()
+# l.add_book(Book("class","sam"))
+# l.add_book(Book("python","ram"))
+# l.add_book(Book("API","raju"))
+# l.borrow_book("python")
+# l.borrow_book("python")
+# l.return_book("python")
+# l.return_book("python")
+
+# 4.The Upgrade: The ⁠ElectricVehicle⁠ Class
+# Concepts: Inheritance and overriding methods.
+# Start with a base ⁠Vehicle⁠ class and build a specific child class.
+#  Base Class ⁠Vehicle⁠:
+#  Attributes: ⁠make⁠, ⁠model⁠, and ⁠fuel_level⁠ (percentage, e.g., ⁠100⁠).
+#  Method: ⁠drive()⁠: Prints ⁠"Driving the [make] [model]!"⁠ and reduces ⁠fuel_level⁠ by ⁠10⁠.
+#  Child Class ⁠ElectricVehicle⁠:
+#  Inherits from ⁠Vehicle⁠.
+#  Override ⁠fuel_level⁠ to be named ⁠battery_level⁠ (or just treat ⁠fuel_level⁠ as the battery capacity).
+#  Override the ⁠drive()⁠ method: Print ⁠"Quietly cruising in the electric [make] [model]!"⁠ and reduce the battery by ⁠5⁠.
+#  Add a new method ⁠charge()⁠: Restores the battery to ⁠100⁠.
+# class Vehicle:
+#     def __init__(self,make,model,fuel_level=100):
+#         self.make=make
+#         self.model=model
+#         self.fuel_level=fuel_level
+#     def drive(self):
+#         print(f"Driving the {self.make}:{self.model}!")
+#         self.fuel_level-=10
+#         print("fuel level:",self.fuel_level)
+# class ElectricVehicle(Vehicle):
+#     def __init__(self,make,model,battery_level=100):
+#         super().__init__(make,model)
+#         self.battery_level=battery_level
+#     def drive(self):
+#         print(f"Quietly cruising in the electric {self.make}: {self.model}")
+#         self.battery_level-=5
+#         print("battery level:",self.battery_level)
+#     def charge(self):
+#         self.battery_level=100
+#         print("battery charged:",self.battery_level)
+# v=ElectricVehicle("tesla","model 3")
+# v.drive()
+# v.charge()
+
+# 5.The ⁠ShoppingCart⁠ System
+# Concepts: Dictionaries inside classes, calculating aggregates.
+# Create a ⁠ShoppingCart⁠ class to manage an online shopping trip.
+#  Attributes: ⁠items⁠ (a dictionary where the keys are item names and values are prices).
+#  Methods:
+#  ⁠add_item(item_name, price)⁠: Adds the item to the cart.
+#  ⁠remove_item(item_name)⁠: Removes the item if it exists; otherwise, handle it gracefully.
+#  ⁠calculate_total(discount_percentage)⁠: Calculates the total cost of all items in the dictionary. If a ⁠discount_percentage⁠ (like ⁠10⁠ for 10%) is provided, apply it to the total before returning the value.
+# class ShoppingCart:
+#     def __init__(self,items={}):
+#         self.items=items
+#     def add_item(self,item_name,price):
+#         self.items[item_name]=price
+#         print(item_name)
+#     def remove_item(self,item_name):
+#         if item_name in self.items:
+#             self.items.pop(item_name)
+#             print("remove the item",item_name)
+#             print(self.items)
+#         else:
+#             print("no items")
+#     def calculate_total(self,discount_percentage):
+#         total=sum(self.items.values())
+#         discount=total*(discount_percentage/100)
+#         total=total-discount
+#         print("total amount:",total)
+# s=ShoppingCart()
+# s.add_item("mobile",2000)
+# s.add_item("laptop",4000)
+# s.add_item("keyboard",300)
+# s.remove_item("keyboard")
+# s.calculate_total(10)
+
+# 6. Class-Level Variables: The ⁠Student⁠ Tracker
+# Concept: Instance variables (unique to each student) vs. Class variables (shared by all students).
+# Create a class called ⁠Student⁠. We want to automatically track how many students have been registered in total.
+#  Class Variable: ⁠total_students⁠ (starts at ⁠0⁠).
+#  Instance Attributes: ⁠name⁠ and ⁠grade⁠ (e.g., ⁠"A"⁠, ⁠"B"⁠).
+#  Constructor (⁠__init__⁠): Every time a new ⁠Student⁠ object is created, increment the class variable ⁠total_students⁠ by ⁠1⁠.
+#  Method: ⁠display_student()⁠: Prints the student's name and grade.
+#  Challenge: Create 3 different students, then print ⁠Student.total_students⁠ to prove it counted them all!
+# class Student:
+#     total_student=0
+#     def __init__(self,name,grade):
+#         self.name=name
+#         self.grade=grade
+#         Student.total_student+=1
+#     def display(self):
+#         print("student name:",self.name)
+#         print("grade:",self.grade)
+# s1=Student("sam","A")
+# s2=Student("ram","B") 
+# s1.display()
+# s2.display()
+# print("total students registered:",Student.total_student)
+
+#2. Encapsulation: The ⁠SmartThermostat⁠ Class
+# Concept: Protecting data from being set to unrealistic values (Getters and Setters).
+# You don't want someone setting a house thermostat to 1000^ or -100^
+#  Attributes: ⁠temperature⁠ (defaults to ⁠20⁠).
+#  Methods:
+#  ⁠get_temperature()⁠: Returns the current temperature.
+#  ⁠set_temperature(new_temp)⁠: Sets the temperature, but only if it is between ⁠10⁠ and ⁠35⁠ (inclusive). 
+#  If it's outside this range, print ⁠"Error: Temperature must be between 10 and 35!"⁠ and do not change the value.
+#  Challenge: Try setting the temperature to ⁠25⁠ (should succeed) and then ⁠50⁠ (should fail).
+# class SmartThermostat():
+#     def __init__(self):
+#         self.__temperature=20
+#     def get_temperature(self):
+#         return self.__temperature
+#     def set_temperature(self,new_temp):
+#         if 10<=new_temp<=35:
+#             self.__temperature=new_temp
+#             print("set temperature value:",self.__temperature)
+#         else:
+#             print("Error: Temperature must be between 10 and 35!")
+# s=SmartThermostat()
+# print("the current temperature:",s.get_temperature())
+# s.set_temperature(25)
+
+# 3. Polymorphism: The ⁠PaymentProcessor⁠ System
+# Concept: Different classes having the exact same method names but behaving differently.
+# Create three classes: ⁠PayPal⁠, ⁠CreditCard⁠, and ⁠Bitcoin⁠.
+#  Each class should have an ⁠__init__⁠ method (e.g., ⁠PayPal⁠ takes an ⁠email⁠, ⁠CreditCard⁠ takes a ⁠card_number⁠).
+#  Each class must have a method called ⁠pay(amount)⁠:
+#  ⁠PayPal.pay(amount)⁠: Prints ⁠"Processing PayPal payment of $amount for [email]"⁠
+#  ⁠CreditCard.pay(amount)⁠: Prints ⁠"Charging $amount to card ending in [last 4 digits]"⁠
+#  ⁠Bitcoin.pay(amount)⁠: Prints ⁠"Transferring amount BTC to wallet address..."⁠
+#  Challenge: Write a simple function ⁠make_purchase(payment_method, amount)⁠ that takes any of these three objects and calls ⁠.
+#  pay(amount)⁠ on it.
+# class PayPal:
+#     def __init__(self,email):
+#         self.email=email
+#     def pay(self,amount):
+#         print(f"Processing PayPal payment of $ {amount} for {self.email}")
+# class CreditCard:
+#     def __init__(self,card_number):
+#         self.card_number=card_number
+#     def pay(self,amount):
+#         print(f"Charging $ {amount} to card ending in {self.card_number[-4:]}")
+# class BitCoin:
+#     def __init__(self,wallet_address):
+#         self.wallet_adress=wallet_address
+#     def pay(self,amount):
+#         print(f"Transferring {amount} BTC to {self.wallet_adress} address...")
+# def make_purchase(payment_method,amount):
+#     payment_method.pay(amount)
+# p=PayPal("sam@gmail.com")
+# c=CreditCard("146242683")
+# b=BitCoin("124-a-237")
+# make_purchase(p,250)
+# make_purchase(c,300)
+# make_purchase(b,500)
+# 4. More Magic Methods: The ⁠Playlist⁠ Class
+# Concept: Customizing container behavior using ⁠__len__⁠ and ⁠__getitem__⁠.
+# Create a class called ⁠Playlist⁠ that holds a list of song titles.
+#  Attributes: ⁠name⁠ (string) and ⁠songs⁠ (list of strings).
+#  Magic Methods:
+#  ⁠__len__(self)⁠: Allow the user to use the built-in ⁠len()⁠ function on your playlist object to see how many songs are in it.
+#  ⁠__getitem__(self, index)⁠: Allow the user to access songs using index bracket notation (e.g., ⁠my_playlist[0]⁠ should return the first song).
+#  Methods: ⁠add_song(song_title)⁠: Appends a song to the list.
+# Which one of these looks like a fun next step? Write out your code for any of them and let's check it!
+# class PlayList:
+#     def __init__(self,name):
+#         self.name=name
+#         self.songs=[]
+#     def add_song(self,song_title):
+#         self.songs.append(song_title)
+#     def __len__(self):
+#         return len(self.songs)
+#     def __getitem__(self,index):
+#         return self.songs[index]
+# p=PlayList.add_song("lenin")
+# p=PlayList.add_song("rubaroo")
+# p=PlayList.add_song("dheer dheer")
+# print(len(p))
+# print(p[0])
+# The Multiplier: The ⁠__mul__⁠ Magic Method
+# Concept: Overloading the multiplication (⁠*⁠) operator.
+# You already mastered ⁠__add__⁠ earlier. Now let's see how to multiply an object by a number! Create a class called ⁠Item⁠.
+#  Attributes: ⁠name⁠ (string) and ⁠price⁠ (float).
+#  Magic Method ⁠__mul__(self, quantity)⁠: Overload the ⁠*⁠ operator so that if you multiply an item object by an integer quantity (e.g., ⁠item * 3⁠), it returns the total cost as a number.
+#  Challenge: Create an item ⁠"Coffee"⁠ for ⁠3.50⁠ and print ⁠coffee * 4⁠. It should output ⁠14.0⁠.
+# class Item:
+#     def __init__(self,name,price):
+#         self.name=name
+#         self.price=price
+#     def __mul__(self,quantity):
+#         return self.price*quantity
+# i=Item("coffee",3.50)
+# print(i*4)
+# 2. The Clean-Up: The ⁠__del__⁠ Destructor
+# Concept: Running code automatically when an object is destroyed or deleted.
+# Python has a dunder method called ⁠__del__⁠ that runs right before an object is removed from memory.
+#  Attributes: ⁠username⁠ (string).
+#  Constructor (⁠__init__⁠): Print ⁠"[username] has logged in."⁠
+#  Destructor (⁠__del__⁠): Print ⁠"[username] has logged out."⁠
+#  Challenge: Create a user instance ⁠user1 = User("Alice")⁠.
+#  Then, manually delete it using the Python command ⁠del user1⁠ and watch the logout message trigger automatically!
+# class CleanUp:
+#     def __init__(self,username):
+#         self.username=username
+#         print(f"{self.username} has logged in.")
+#     def __del__(self):
+#         print(f"{self.username} has logged out.")
+# user1=CleanUp("alice")
+# del user1
+# 3. Custom Iterators: The ⁠__iter__⁠ and ⁠__next__⁠ Methods
+# Concept: Making your object loopable with a standard ⁠for⁠ loop.
+# Right now, your ⁠Playlist⁠ class allows bracket indexing (⁠p1[0]⁠). But what if you want to loop through an object directly using ⁠for song in playlist:⁠? 
+# Let's build a simple counter to see how looping works under the hood. Create a class called ⁠Countdown⁠.
+#  Attributes: ⁠start⁠ (integer).
+#  Magic Method ⁠__iter__(self)⁠: Simply ⁠return self⁠. This tells Python the object is iterable.
+#  Magic Method ⁠__next__(self)⁠:
+#  If ⁠self.start⁠ is greater than ⁠0⁠, save the current value, decrease ⁠self.start⁠ by ⁠1⁠, and return the saved value.
+#  If ⁠self.start⁠ reaches ⁠0⁠, raise ⁠StopIteration⁠ (this is a special Python signal that safely tells a ⁠for⁠ loop to stop spinning).
+#  Challenge: Create ⁠counter = Countdown(3)⁠ and run ⁠for num in counter: print(num)⁠. It should print ⁠3⁠, ⁠2⁠, ⁠1⁠, and stop beautifully.
+# class CountDown:
+#     def __init__(self,start):
+#         self.start=start
+#     def __iter__(self):
+#         return self
+#     def __next__(self):
+#         if self.start>0:
+#             current=self.start
+#             self.start-=1
+#             return current
+#         elif self.start==0:
+#             raise StopIteration("this is a special python signal that safely tells a for loop to stop spinning")
+# counter=CountDown(3)
+# for num in counter:
+#     print(num)
