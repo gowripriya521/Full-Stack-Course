@@ -95,12 +95,84 @@
 #     return books
 # @app.route("/api/books/<author>")
 # def filt_book(author):
-#     if author:
-#         temp=[]
-#         for i in books:
-#             if i['author']==author:
-#                 temp.append(i)
-#         return temp
+#     temp=[]
+#     for i in books:
+#         if i['author']==author:
+#             temp.append(i)
+#     return temp
+   
 # if __name__=="__main__":
 #     app.run(host='0.0.0.0',port=8001, debug=True)
-    
+
+#1.write a fizzbuzz program
+# from flask import Flask
+# app=Flask(__name__)
+# @app.route("/fizzbuzz/<int:n>")
+# def fizz_buzz(n):
+#     temp=[]
+#     for i in range(1,n+1):
+#         if i%3==0 and i%5==0:
+#             temp.append("fizz buzz")
+#         elif i%3==0:
+#             temp.append("fizz" )
+#         elif i%5==0:
+#             temp.append("buzz")
+#         else:
+#             temp.append(i)
+#     return temp
+# if __name__=="__main__":
+#     app.run(host='0.0.0.0',port=8001,debug=True)
+
+#2.table
+# from flask import Flask
+# app=Flask(__name__)
+# @app.route("/table/<int:num>")
+# def table_1(num):
+#     temp=[]
+#     for i in range(1,11):
+#         temp.append(f"{num} x {i} = {num*i}")
+#     return temp
+# if __name__=="__main__":
+#     app.run(host='0.0.0.0',port=8001,debug=True)
+
+#3.guess the game
+# from flask import Flask
+# app=Flask(__name__)
+# @app.route("/guessgame/<int:num>/<int:target>")
+# def guess(num,target):
+#     if num>target:
+#         return "high"
+#     elif num<target:
+#         return "low"
+#     elif num==target:
+#         return "you win"
+#     else:
+#         return "error"
+# if __name__=="__main__":
+#     app.run(host='0.0.0.0',port=8001,debug=True)
+
+#4. frequency count program
+# from flask import Flask
+# app=Flask(__name__)
+# @app.route("/budget")
+# def number():
+#     num=[1,2,3,4,4,5,6,7,4,0,0,5]
+#     temp={}
+#     for i in num:
+#         if i not in temp:
+#             temp[i]=1
+#         else:
+#             temp[i]+=1
+#     return temp 
+# if __name__=="__main__":
+#     app.run(host='0.0.0.0',port=8001,debug=True)
+from flask import request
+from flask import Flask
+app=Flask(__name__)
+@app.route("/",methods=['POST'])
+def hello_world_post():
+    if request.method=='POST':
+        data=request.get_json()
+        for i in data:
+            my_dict[i]=data[i]
+    return "200"

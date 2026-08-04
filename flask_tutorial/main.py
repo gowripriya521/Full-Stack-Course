@@ -1,40 +1,27 @@
-# from flask import Flask
-# app=Flask(__name__)
+# from flask import Flask, request
+# from mydata import *
 
-# @app.route("/")
-# def word_1():
-#     return "hello world"
+# app = Flask(__name__)
 
-# @app.route("/get_name/<name>")
-# def user_1(name):
-#     return  f'hi {name}'
+# @app.route("/studentdata/<int:rollno>")
+# def student(rollno):
+#     print(rollno)
+#     return (x[rollno])
 
-# @app.route("/<int:a>/<int:b>")
-# def addition_1(a,b):
-#     return str(a+b)
+# @app.route("/allstudents")
+# def student_get_alldata():
+#     return x
 
-# @app.route("/<int:a>")
-# def list_num(a):
-#     temp=[]
-#     for i in range(1,a+1):
-#         temp.append(i)
-#     return temp
-# @app.route("/eligible_checker/<int:age>")
-# def eligible(age):
-#     if age>=18:
-#         return "eligible for vote"
-#     else:
-#         return "not eligible for vote"
-# @app.route("/number_checker/<int:num>")
-# def factors_1(num):
-#     temp=[]
-#     for i in range(1,num+1):
-#         if num%i==0:
-#             temp.append(i)
-#     return temp
+# @app.route("/classnames/<int:classname>")
+# def student_get_names(classname):
+#     return {
+#         "student names":student_class(classname)
+#     }
+# @app.route("/usernames")
+# def student_names():
+#     return {
+#         "all_student": all_student()
+#     }
 
-# if __name__=="__main__":
-#     app.run(host='0.0.0.0',port=8001,debug=True)
-
-
-
+# if __name__ == "__main__":
+#     app.run(debug=True, host="0.0.0.0", port=8001)
