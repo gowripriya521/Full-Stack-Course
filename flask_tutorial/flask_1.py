@@ -166,13 +166,112 @@
 #     return temp 
 # if __name__=="__main__":
 #     app.run(host='0.0.0.0',port=8001,debug=True)
-from flask import request
-from flask import Flask
-app=Flask(__name__)
-@app.route("/",methods=['POST'])
-def hello_world_post():
-    if request.method=='POST':
-        data=request.get_json()
-        for i in data:
-            my_dict[i]=data[i]
-    return "200"
+# from flask import request
+# from flask import Flask
+# app=Flask(__name__)
+# @app.route("/",methods=['POST'])
+# def hello_world_post():
+#     if request.method=='POST':
+#         data=request.get_json()
+#         for i in data:
+#             my_dict[i]=data[i]
+#     return "200"
+
+# from flask import Flask, request
+# from mydata import *
+
+# app = Flask(__name__)
+
+# @app.route("/studentdata/<int:rollno>")
+# def student(rollno):
+#     print(rollno)
+#     return (x[rollno])
+
+# @app.route("/allstudents")
+# def student_get_alldata():
+#     return x
+
+# @app.route("/classnames/<int:classname>")
+# def student_get_names(classname):
+#     return {
+#         "student names":student_class(classname)
+#     }
+# @app.route("/usernames")
+# def student_names():
+#     return {
+#         "all_student": all_student()
+#     }
+
+# if __name__ == "__main__":
+#     app.run(debug=True, host="0.0.0.0", port=8001)
+
+
+
+
+# from flask import Flask, request ,jsonify
+# from mydata import *
+
+# app = Flask(__name__)
+# PLAYERS = { 
+#     101: {"username": "PixelSlayer", "game": "Valorant", "rank": "Diamond", "level": 45}, 
+#     102: {"username": "ShadowNinja", "game": "Fortnite", "rank": "Unranked", "level": 12}, 
+#     103: {"username": "CyberQueen",  "game": "Valorant", "rank": "Radiant",  "level": 88}
+# }
+
+# @app.route("/players/<int:player_id>") 
+# def player_get_data(player_id):
+#     if player_id in PLAYERS:
+#         player=PLAYERS[player_id]
+#         return jsonify({"id":player_id,
+#                         **player
+#         }), 200
+#     return jsonify({
+#         "error":"player not found"
+#     }),404
+
+# @app.route("/sneakers")
+# def sneakers_get_data():
+#     brand=request.args.get("brand")
+#     max_price=request.args.get("max_price",type=int)
+#     temp=get_sneakers(brand, max_price)
+#     return jsonify(temp), 200
+
+# @app.route("/songs/search")
+# def songs_1():
+#     q=request.args.get("q")
+#     temp=get_playlist(q)
+#     return jsonify(temp),200
+
+# @app.route("/leaderboard")
+# def leaderboard_get_data():
+#     top = request.args.get("top", type=int)
+#     result = get_leaderboard(top)
+#     return jsonify(result), 200
+
+# @app.route("/students/stats")
+# def students_get_data():
+#     result = get_student_stats()
+#     return jsonify(result), 200
+
+# @app.route("/studentdata/<int:rollno>")
+# def student(rollno):
+#     print(rollno)
+#     return (x[rollno])
+
+# @app.route("/allstudents")
+# def student_get_alldata():
+#     return x
+
+# @app.route("/classnames/<int:classname>")
+# def student_get_names(classname):
+#     return {
+#         "student names":student_class(classname)
+#     }
+# @app.route("/usernames")
+# def student_names():
+#     return {
+#         "all_student": all_student()
+#     }
+
+# if __name__ == "__main__":
+#     app.run(debug=True, host="0.0.0.0", port=8001)
