@@ -114,19 +114,38 @@
 #         temp[key] = value
 #     return temp
 
+# def get_sneakers(brand=None,max_price=None):
+#     result = []
+#     for i in SNEAKERS:
+#         if brand and SNEAKERS[i]["brand"] != brand:
+#             continue
+#         if max_price and SNEAKERS[i]["price"] > max_price:
+#             continue
+#         result.append({
+#             "id": i,
+#             **SNEAKERS[i]
+#         })
+#     return result
+
+
 # PLAYLIST = {
 #     1: {"title": "Blinding Lights",  "artist": "The Weeknd", "genre": "Pop"},
 #     2: {"title": "Starboy","artist": "The Weeknd", "genre": "Pop"},
 #     3: {"title": "Levitating","artist": "Dua Lipa", "genre": "Pop"},  
 #     4: {"title": "Bohemian Rhapsody","artist": "Queen", "genre": "Pop"}     
 # }
-# def get_playlist(q):
-#     temp={}
-#     for key,value in PLAYLIST.items():
-#         if q not in value["title"].lower() and q not in value["artist"].lower():
-#             continue
-#         temp[key]=value
-#     return temp
+# def search_song(q=None):
+#     result = []
+#     q=q.lower()
+#     for i in PLAYLIST:
+#         title=PLAYLIST[i]["title"].lower()
+#         artist=PLAYLIST[i]["artist"].lower()
+#         if q in title or q in artist:
+#             result.append({
+#                 "id":i,
+#                 **PLAYLIST[i]
+#             })
+#     return result
 
 # SCORES = {
 #     1: {"player": "Alex", "score": 4500},
@@ -135,11 +154,17 @@
 #     4: {"player": "Taylor", "score": 8100},
 #     5: {"player": "Morgan", "score": 6700}
 # }
-# def get_leaderboard(top):
-#     result = sorted(SCORES.items(), key=lambda x: x[1]["score"], reverse=True)
+# def get_leaderboard(top=None):
+#     result =[] 
+#     for i in SCORES:
+#         result.append({
+#             "id":i,
+#             **SCORES[i]
+#         })
+#     result.sort(key=lambda x: x["score"], reverse=True)
 #     if top:
 #         result = result[:top]
-#     return dict(result)
+#     return result
 
 # STUDENTS = {
 #     1: {"name": "Emma", "grade": 10, "passed": True},
@@ -148,19 +173,21 @@
 #     4: {"name": "Olivia", "grade": 11, "passed": True},
 #     5: {"name": "Ethan", "grade": 10, "passed": True}
 # }
-
 # def get_student_stats():
-#     total = len(STUDENTS)
 #     passed = 0
-#     for student in STUDENTS.values():
-#         if student["passed"]:
+#     for i in STUDENTS:
+#         if STUDENTS[i]["passed"]:
 #             passed += 1
+#     total=len(STUDENTS)
 #     failed = total - passed
+#     pass_rate=(passed/total)*100
 #     return {
 #         "total_students": total,
 #         "passed_count": passed,
-#         "failed_count": failed
+#         "failed_count": failed,
+#         "pass_rate_percentage":pass_rate
 #     }
+
 
 # WEATHER = {
 #     101: {"city": "Chennai", "temperature": 34, "condition": "Sunny"},
