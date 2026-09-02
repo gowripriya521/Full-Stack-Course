@@ -1,0 +1,5 @@
+route/products->list of products(5),id,price,name of the products
+route/add_to_cart->input(json-ctm email_id,products,products_id_quantity)
+route/total->email->no of mobile,total amount,total products.
+route/checkout->total amount(msg)it success remove the email and if not(error)
+
