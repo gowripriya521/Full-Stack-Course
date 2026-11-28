@@ -8,7 +8,7 @@
 # - Use a dictionary.
 # - Use a for loop.
 # - If the character already exists, increase its count.
-# - Otherwise, add it with count 1.
+# - Otherwise, add it with count 1.   
 
 x="python programming"
 temp={}
